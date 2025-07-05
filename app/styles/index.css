@@ -1,0 +1,394 @@
+  /* Full-screen black overlay */
+  .intro-overlay {
+    position: fixed;
+    inset: 0;
+    background: black;
+    color: white;
+    z-index: 9999;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Flex display */
+  .intro-overlay .intro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  } 
+
+  /* Static heading */
+  .intro-overlay .intro-content .main-text {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  /* Fading-in line */
+  .intro-overlay .intro-content .fade-in-text {
+    font-size: 1.2rem;
+    opacity: 0;
+    animation: fadeIn 3s ease-in-out forwards;
+    animation-delay: 0.5s;
+    margin: 0;
+  }
+
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Overlay hides itself */
+  .hidden {
+    display: none;
+    pointer-events: none;
+  }
+
+  /*********************************************************************************************/
+
+  .work-summary {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .work-summary .content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3rem;
+  }  
+  
+  .work-summary .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    z-index: 0;
+  }
+
+  .work-summary .heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: red;
+    z-index: 1;
+  }
+  
+  .work-summary .pinstripe {
+    width: 40%;
+    height: 2px;
+    background-color: red;
+    margin-bottom: 1rem;
+    z-index: 1;
+  }
+  
+  .work-summary .subheading {
+    font-size: 1.2rem;
+    color: red;
+    z-index: 1;
+  }
+  
+  /**********************************************************************************************************/
+
+  .stats-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    color: #b63232;
+    font-family: 'Cormorant Upright';
+  }
+
+  .stats-section .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .stats-section .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }
+
+  /* Main content container */
+  .stats-section .content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+    box-sizing: border-box;
+  }
+
+  /* Left side title + caption */
+  .stats-section .left-text {
+    max-width: 40%;
+    padding: 1rem;
+  }
+
+  .stats-section .left-text .heading {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .stats-section .left-text .paragraph {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+
+  /* Right side stats */
+  .stats-section .right-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2rem;
+  }
+
+  .stats-section .right-text .stat-block {
+    text-align: right;
+  }
+
+  .stats-section .right-text .stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  .stats-section .right-text .stat-label {
+    font-size: 0.95rem;
+    opacity: 0.85;
+  }
+
+  @media (max-width: 786px) {
+
+    .stats-section .content {
+      flex-direction: column;
+      padding: 3rem;
+      justify-content: center;
+      gap: 0rem;
+    }
+    .stats-section .left-text {
+      max-width: 100%;
+      padding: 0;
+      text-align: center;
+      padding-bottom: 2rem;
+    }
+    .stats-section .right-text {
+      align-items: center;
+      font-size: 1rem;
+      gap: 0rem;
+    }
+    .stats-section .right-text .stat-block {
+      text-align: center;
+    }
+  }
+  /**********************************************************************************************************/
+
+  /* Core Section Layout */
+  .map-and-international-section .map-and-international-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  /* LEFT: India Column */
+  .map-and-international-section .map-column {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .map-and-international-section .svg-section {
+    position: relative;
+  }
+
+  .map-and-international-section .svg-section .india-map {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .map-and-international-section .textbox {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #f8f6f0;
+    border-left: 7px solid #d94343;
+  }
+
+  .map-and-international-section .textbox .heading {
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-family: 'Cormorant Garamond';
+  }
+
+  .map-and-international-section .textbox .paragraph {
+    margin: 0.5rem 0 0;
+    font-size: 0.95rem;
+    color: #2b2b2b;
+  }
+
+  /* RIGHT: International Column */
+  .map-and-international-section .international-column {
+    transform-origin: top left;
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    height: fit-content;
+  }
+
+  /* International Image Boxes */
+  .map-and-international-section .international-image-box {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    flex: 1 1 auto;
+  }
+
+  .map-and-international-section .international-image-box .image {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  /* Hover overlay */
+  .map-and-international-section .overlay-on-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #f8f6f0;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .map-and-international-section .overlay-on-hover .heading {
+    margin: 0 0 0.5rem;
+    font-size: 1.3rem;
+  }
+
+  .map-and-international-section .overlay-on-hover .paragraph {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  /* Hover effect */
+  .map-and-international-section .international-image-box:hover img {
+    transform: scale(1.05);
+  }
+
+  .map-and-international-section .international-image-box:hover .overlay-on-hover {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Section Heading & Footer */
+  .map-and-international-section .header, .footer {
+    text-align: center;
+    margin: 2rem 0 1rem;
+  }
+
+  .map-and-international-section .section3-heading h2, .section3-footer .text {
+    display: block;
+    font-size: 2rem;
+    margin-top: 3rem;
+    color: #b63232;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 786px) {
+    .map-and-international-section .map-and-international-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .map-and-international-section .map-column, .international-column {
+      max-width: 100%;
+    }
+
+    .map-and-international-section .international-column {
+      height: auto;
+    }
+
+    .map-and-international-section .international-image-box {
+      width: 100%;
+      height: auto;
+    }
+
+    .map-and-international-section .international-image-box .image {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  /* Map Pin Styling */
+  .map-and-international-section .map-pin {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: transform 1s ease;
+  }
+
+  .map-and-international-section .map-pin:hover {
+    transform: translate(-50%, -80%);
+    z-index: 99;
+  }
+
+  .map-and-international-section .pin-label {
+    display: none;
+    position: absolute;
+    background: #f8f6f0;
+    color: #2b2b2b;
+    padding: 2px 6px;
+    border: 1px solid #f8f6f0;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+
+  .map-and-international-section .map-pin:hover + .pin-label{
+    display: block;
+  }
+
+  /**********************************************************************************************************/

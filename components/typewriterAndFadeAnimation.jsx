@@ -1,3 +1,5 @@
+"use client";
+// This file is used to create a typewriter effect with fade-in animation for text.
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView } from 'framer-motion';
 

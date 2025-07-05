@@ -1,3 +1,6 @@
+"use client";
+// This file is used to create a map section with pins for locations in India and international locations
+
 import React, { useEffect, useState, useRef } from 'react';
 
 function GeneratePins() {

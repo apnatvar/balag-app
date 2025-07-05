@@ -1,6 +1,9 @@
+"use client";
+// This file is used to create a side menu with a contact form.
+
 import React, { useState } from "react";
 import ContactForm from "./contactForm";
-import "../pages/styles/components.css";
+import "../app/styles/components.css";
 
 export default function SideMenu() {
     const [isMenuVisible, setMenuVisble] = useState(false);

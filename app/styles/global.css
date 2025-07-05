@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer and Edge */
+    /* outline: 2px solid blue;    */
+  }
+  ::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+    width: 0px;
+    background: transparent; 
+  }
+  
+  /*
+  'Lora'; is broader, suits sub-heading more
+  'Cormorant Garamond'; too skinny, maybe in the small subheading in the map section
+  'Inter'; very standard, good for large blocks of text or the buttons
+  'Raleway'; slim, lots of space, broad, seemed nice for the body of the b&w photo
+  'Work Sans'; for text on buttons and menu
+  'Bebas Neue'; need a slimmer version of this for the b&w photo 'Story+soul' thing
+  */
+  body {
+    line-height: 1.6;
+    color: #b63232;
+    width: 100%;
+  }
+
+  main {
+    margin: 0;
+    width: 100%;
+    background-color: #f8f6f0;
+  }

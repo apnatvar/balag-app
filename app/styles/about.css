@@ -1,0 +1,391 @@
+  /*****************************************************************************************************/
+   
+  .about-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+  }
+
+  .about-hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Overlay dimming effect */
+    display: flex;
+    flex-direction: column;
+    color: #f8f6f0;
+    padding: 2rem;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .about-hero .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  /* Logo */
+  .about-hero .logo {
+    max-width: 120px;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    z-index: 1;
+  }
+  
+  /* Navigation Links */
+  .about-hero .nav {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .about-hero .nav-buttons {
+    color: #f8f6f0;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  .about-hero .nav-buttons::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+  }
+  
+  .about-hero .nav-buttons:hover::after {
+    width: 100%;
+  }
+  
+  /* Hero Title */
+  .about-hero .title {
+    font-size: 4rem;
+    font-weight: 800;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    z-index: 1;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .about-hero .overlay {
+      justify-content: space-evenly;
+    }
+
+    .about-hero .logo {
+      order: 1;
+    }
+
+    .about-hero .nav {
+      order: 3;
+    }
+
+    .about-hero .title {
+      font-size: 2.5rem;
+      order: 2;
+    }
+  
+    .about-hero .nav {
+      gap: 1.2rem;
+      font-size: 1rem;
+    }
+  }
+
+  /*****************************************************************************************************/
+  
+  .founder-section {
+    padding: 4rem 2rem;
+    background-color: #f8f6f0;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Heading */
+  .founder-section .founder-heading {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2b2b2b;
+  }
+  
+  /* Founders Grid */
+  .founder-section .founders {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 100vh;
+    justify-items: center;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+  
+  /* Individual Founder Card */
+  .founder-section .founder {
+    flex: 1 1 45%;
+    overflow: hidden;
+    background-color: #f8f6f0;
+    border-radius: 10px;
+    justify-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .founder-section .founder:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Image Styling */
+  .founder-section .image {
+    border-radius: 20px;
+    object-fit: cover;
+    max-height: 80vh;
+    display: block;
+    aspect-ratio: 9/16;
+  }
+  
+  /* Name & Title */
+  .founder-section .name {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .founder-section .designation {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .founder-section .name {
+        font-size: .8rem;
+    }
+  }
+  
+  /*****************************************************************************************************/
+  .our-story {
+    background-color: #2b2b2b; /* Dark overlay for readability */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    max-width: 95%;
+    justify-self: center;
+  }
+  
+  .our-story .heading {
+    font-size: 3rem;
+    margin: 0;
+    color: #b63232;
+    padding-top: 10px;
+    text-align: center;
+    /* margin: 1rem; */
+  }
+  
+  /* Inner container for layout */
+  .our-story .content {
+    display: flex;
+    margin: 0 auto;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  /* Left: Image */
+  .our-story .image {
+    flex: 1 1 30%;
+    position: relative;
+    height: auto;
+    border-radius: 10px;
+    display: flex;
+    max-height: 90vh;
+    object-fit: cover;
+  }
+  
+  /* Right: Text */
+  .our-story .paragraph  {
+    flex: 1 1 70%;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #f8f6f0;
+    text-align: justify;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .our-story .content {
+      flex-direction: column;
+    }
+  
+    .our-story .text, .image {
+      width: 100%;
+    }
+  }
+
+  /*****************************************************************************************************/ 
+  
+  .team {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 40px;
+  }
+  
+  .team .heading {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  /* Team Members Grid */
+  .team .team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    justify-content: space-evenly;
+  }
+  
+  /* Team Member Card */
+  .team .team-member {
+    background-color: #f8f6f0;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .team .team-member:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+  }
+  
+  .team .team-member .image {
+    width: 250px;
+    height: 250px;
+    border-radius: 35%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  
+  .team .team-member .name {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    color: #2b2b2b;
+  }
+  
+  .team .team-member .role  {
+    font-size: 1rem;
+    color: #2b2b2b;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {  
+    .team .team-members {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .team .team-member .image {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  /*****************************************************************************************************/ 
+  
+  .review-section {
+    background-color: #f8f6f0;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    padding: 1rem;
+  }
+
+  .review-section .review-header {
+    flex: 0 0 auto;
+    padding: 2rem 1rem 1rem;
+    text-align: center;
+    background: #f8f6f0;
+    font-size: 2rem;
+    color: #b63232;
+    margin: 0;
+  }
+
+  .review-section .review-grid {
+    flex: 1;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .review-section .card {
+    position: relative;
+    flex: 1;
+    background-position: center;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+    height: 90vh;
+    overflow: hidden;
+    bottom: 0;
+  }
+
+  .review-section .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+  }
+
+  .review-section .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0); /* transparent by default */
+    transition: background-color 0.3s ease-in-out;
+    z-index: 1;
+  }
+
+  .review-section .overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    color: #f8f6f0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: bottom 0.4s ease-in-out;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .review-section .card:hover::before {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .review-section .card:hover .overlay {
+    bottom: 0;
+  }
+
+  .review-section .overlay .paragraph {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .review-section .overlay .name {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  /*****************************************************************************************************/ 

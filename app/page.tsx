@@ -1,6 +1,6 @@
 import React from 'react';
-import './styles/global.css';
-import './styles/index.css';
+import '@/app/styles/global.css';
+import '@/app/styles/index.css';
 import SideMenu from '@/components/sideMenu';
 import IndexOverlay from '@/components/indexOverlay';
 import IndexWorkSummarySection from '@/components/indexWorkSummary';
@@ -12,18 +12,15 @@ export default function App(){
     <>
       {/* Right Side Expandable Menu */}
       <SideMenu />
-      <body>
         <main>
           <IndexOverlay />
           <IndexStatsSection />
           <IndexWorkSummarySection />
-          
           <IndexMapSection />
           {indexHeroCarousel()}
           {indexTrailerSection()}
           {indexAutoCarouselSection()}
         </main>
-      </body>
       <noscript>You need to enable JavaScript to run this app.</noscript>
     </>
   );

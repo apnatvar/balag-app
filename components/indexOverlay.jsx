@@ -1,3 +1,6 @@
+"use client";
+// This file is used to create an index overlay with a fade-in animation for text.
+
 import React, { useState, useEffect } from "react";
 
 export default function IndexOverlay() {

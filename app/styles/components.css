@@ -1,0 +1,250 @@
+  /* Right Side Menu */
+  .side-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    font-family: 'Work Sans'; 
+  }
+  
+  .menu-toggle {
+    background-color: #b63232;
+    color: #f8f6f0;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background-color 0.9s ease;
+  }
+  
+  .menu-toggle:hover {
+    background-color: #d94343;
+  }
+  
+  .menu-list {
+    margin-top: 10px;
+    list-style: none;
+    background-color: #f8f6f0; 
+    border-radius: 8px;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .open {
+    display: block;
+  }
+
+  .closed {
+    display: none;
+  }
+  
+  .menu-list li {
+    padding: 8px 20px;
+  }
+  
+  .menu-list li a {
+    color: #b63232;
+    text-decoration: none;
+  }
+  
+  .menu-list li a:hover {
+    text-decoration: underline;
+  }
+ 
+  /* Form Container */
+  .form-overlay {
+    position: fixed; /* Sticks to the viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top */
+  }
+  
+  .form-container {
+    position: relative;
+    justify-self: center;
+    background: #f8f6f0;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 90%;
+    max-width: 400px;
+    box-sizing: border-box;
+  }
+  
+  .form-container .close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .form-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Form Fields */
+  .form-container label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    color: #555;
+    font-size: 0.95rem;
+  }
+  
+  .form-container input[type="text"],
+  .form-container input[type="tel"],
+  .form-container input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+  }
+  
+  /* Consent Checkbox */
+  .form-container .checkbox-label {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+  }
+  
+  .form-container .checkbox-label input {
+    margin-right: 8px;
+  }
+  
+  /* Submit Button */
+  .form-container .submit-button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: #b63232;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    justify-self: center;
+  }
+  
+  .form-container button:hover {
+    background-color: #333;
+  }
+  
+  /* Response Message */
+  .response-message {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.95rem;
+  }
+
+  .footer {
+    background-color: #222;
+    color: #f8f6f0;
+    padding: 2rem 1rem;
+    font-family: sans-serif;
+  }
+  
+  .footer .content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer .column {
+    flex: 1 1 250px;
+  }
+
+  .footer .left {
+    text-align: left;
+  }
+  
+  .footer .right {
+    text-align: right;
+  }
+  
+  .footer .links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer .link {
+    color: #f8f6f0;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s;
+  }
+  
+  .footer .link:hover {
+    color: red;
+  }
+  
+  .footer .column .title {
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .footer .social-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: right;
+  }
+  
+  .footer .social-link {
+    color: #f8f6f0;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+  }
+  
+  .footer .social-link:hover {
+    color: red;
+  }
+  
+  .footer .bottom {
+    text-align: center;
+    border-top: 1px solid #555;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .footer .creator {
+    color: red;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .footer .content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .footer .column {
+      flex: 1 1 100%;
+    }
+  
+    .footer .social-icons {
+      justify-content: center;
+    }
+  }
+  
