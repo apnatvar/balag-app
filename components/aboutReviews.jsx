@@ -1,13 +1,30 @@
 import React from "react";
-import ReviewCards from "./reviewCards";
 
-export default function AboutReviewsSection() {
+export default function AboutReviewsSection({ reviewContent }) {
+
+    if (!reviewContent) return <p>Loading...</p>;
+
     return (
         <section className="review-section">
-            <h2>Here's what our customers have to say</h2>
+            <h2>{reviewContent.heading}</h2>
             <div className="review-grid">
-                <ReviewCards />
+                {generateCards(reviewContent.cards)}
             </div>
         </section>
     );
-  }
+
+    function generateCards(cards) {
+
+        if (!cards) return <p>Loading...</p>;
+
+        return cards.map((review, index) => (
+            <div key={index} className="card">
+                <img className="image" src={review.image}></img>
+                <div className="overlay">
+                    <p className="paragraph">{review.review}</p>
+                    <div className="name">{review.name}</div>
+                </div>
+            </div>
+        ));
+    };
+}
