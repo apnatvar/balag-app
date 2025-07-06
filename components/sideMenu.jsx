@@ -27,7 +27,7 @@ return (
         <li><a href="#section7">Section 7</a></li>
         <li><a onClick={openForm}>Contact Us</a></li>
         <li><a href="/about">About Us</a></li>
-        <li><a href="/admin">Admin</a></li>
+        <li><a href="/auth/login">Admin</a></li>
         </ul>
     </nav>
 
