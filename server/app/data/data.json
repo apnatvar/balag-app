@@ -1,0 +1,290 @@
+{
+    "index": {
+        "map-section": {
+            "header": "text",
+            "footer": "text",
+            "textbox-heading": "text",
+            "textbox-paragraph": "text",
+            "images": [
+                {
+                    "image": "text",
+                    "alt": "text",
+                    "heading": "text",
+                    "paragraph": "text"
+                },
+                {
+                    "image": "text",
+                    "alt": "text",
+                    "heading": "text",
+                    "paragraph": "text"
+                },
+                {
+                    "image": "text",
+                    "alt": "text",
+                    "heading": "text",
+                    "paragraph": "text"
+                }
+            ],
+            "locations": [
+                {
+                    "name": "Delhi",
+                    "lat": 28.704,
+                    "lon": 77.103,
+                    "link": "delhi-gallery.html"
+                },
+                {
+                    "name": "Mumbai",
+                    "lat": 19.0760,
+                    "lon": 72.9777,
+                    "link": "mumbai-gallery.html"
+                },
+                {
+                    "name": "Kolkata",
+                    "lat": 22.5726,
+                    "lon": 88.3639,
+                    "link": "kolkata-gallery.html"
+                },
+                {
+                    "name": "Bengaluru",
+                    "lat": 12.9716,
+                    "lon": 77.5946,
+                    "link": "bengaluru-gallery.html"
+                },
+                {
+                    "name": "Chennai",
+                    "lat": 13.0827,
+                    "lon": 79.6107,
+                    "link": "chennai-gallery.html"
+                }
+            ]
+        },
+        "overlay": {
+            "title": "text",
+            "subtitle": "text"
+        },
+        "work-summary": {
+            "title": "text",
+            "subtitle": "text"
+        },
+        "index": {
+            "video": "text",
+            "video-not-playable-text": "text",
+            "left-heading": "text",
+            "left-paragraph": "text",
+            "right-text": [
+                {
+                    "number": "text",
+                    "label": "text"
+                },
+                {
+                    "number": "text",
+                    "label": "text"
+                },
+                {
+                    "number": "text",
+                    "label": "text"
+                }
+            ]
+        }
+    },
+
+    "about": {
+        "hero": {
+            "image": "/assets/about-us/team-photo.jpg",
+            "imageAlt": "Team Photo",
+            "logo": "/assets/logo.png",
+            "logoAlt": "Company Logo",
+            "nav": [
+                {
+                    "text": "about",
+                    "href": "link"
+                },
+                {
+                    "text": "contact",
+                    "href": "link"
+                },
+                {
+                    "text": "work",
+                    "href": "link"
+                },
+                {
+                    "text": "home",
+                    "href": "link"
+                },
+                {
+                    "text": "blog",
+                    "href": "link"
+                },
+                {
+                    "text": "gallery",
+                    "href": "link"
+                }
+            ],
+            "title": "fade in animation"
+        },
+
+        "founder": {
+            "heading": "text",
+            "founders": [
+                {
+                    "image": "/assets/about-us/neeraj-singh.jpg",
+                    "alt": "Neeraj Singh",
+                    "name": "Neeraj 'Guddu' Singh",
+                    "designation": "Founder"
+                },
+                {
+                    "image": "/assets/about-us/vinod-singh.jpg",
+                    "alt": "Vinod Singh",
+                    "name": "Vinod Singh",
+                    "designation": "Co-Founder"
+                }
+            ]
+        },
+
+        "story": {
+            "heading": "Our Story",
+            "image": "/assets/about-us/vinod-neeraj.jpg",
+            "alt": "Vinod and Neeraj",
+            "paragraph": "text"
+        },
+
+        "team": {
+            "heading": "Meet Our Team",
+            "members": [
+                {
+                    "name": "Amit Verma",
+                    "image": "/assets/about-us/test-member.jpg",
+                    "role": "Business Development Manager"
+                },
+                {
+                    "name": "Gaurav Sengar",
+                    "image": "/assets/about-us/gaurav-sengar.jpg",
+                    "role": "Business Development Manager"
+                },
+                {
+                    "name": "Yash Singh",
+                    "image": "/assets/about-us/amit-verma.jpg",
+                    "role": "Event Manager"
+                }
+            ]
+        },
+
+        "reviews": {
+            "heading": "text",
+            "cards": [
+                {
+                    "image": "/assets/review-images/1.jpg",
+                    "review": "A magical experience from start to finish.",
+                    "name": "Ananya & Rahul"
+                },
+                {
+                    "image": "/assets/review-images/6.jpg",
+                    "review": "We felt so taken care of throughout!",
+                    "name": "Neha & Saurabh"
+                },
+                {
+                    "image": "/assets/review-images/5.jpg",
+                    "review": "Truly unforgettable service and kindness.",
+                    "name": "Priya & Akash"
+                },
+                {
+                    "image": "/assets/review-images/4.jpg",
+                    "review": "Everything exceeded our expectations!",
+                    "name": "Sneha & Rohit"
+                },
+                {
+                    "image": "/assets/review-images/3.jpg",
+                    "review": "Thank you for making our day so special.",
+                    "name": "Ayesha & Karan"
+                },
+                {
+                    "image": "/assets/review-images/2.jpg",
+                    "review": "Absolutely wonderful planning and execution.",
+                    "name": "Meera & Arjun"
+                }
+            ]
+        }
+    },
+    "blogs": [
+        {    
+            "main-title": "text",
+            "subtitle": "text",
+            "paragraphs": [
+                {
+                    "paragraph": "text"
+                },
+                            {
+                    "paragraph": "text"
+                },
+                            {
+                    "paragraph": "text"
+                },
+                            {
+                    "paragraph": "text"
+                }
+            ],
+            "images": [
+                {
+                    "image": "source",
+                    "alt": "text"
+                },
+                            {
+                    "image": "source",
+                    "alt": "text"
+                },
+                            {
+                    "image": "source",
+                    "alt": "text"
+                },
+                            {
+                    "image": "source",
+                    "alt": "text"
+                },
+                            {
+                    "image": "source",
+                    "alt": "text"
+                }
+            ]
+        },
+        {
+            "main-title": "text",
+            "subtitle": "text",
+            "paragraphs": [
+                {
+                    "paragraph": "text"
+                },
+                            {
+                    "paragraph": "text"
+                },
+                            {
+                    "paragraph": "text"
+                },
+                            {
+                    "paragraph": "text"
+                }
+            ],
+            "images": [
+                {
+                    "image": "source",
+                    "alt": "text"
+                },
+                            {
+                    "image": "source",
+                    "alt": "text"
+                },
+                            {
+                    "image": "source",
+                    "alt": "text"
+                },
+                            {
+                    "image": "source",
+                    "alt": "text"
+                },
+                            {
+                    "image": "source",
+                    "alt": "text"
+                }
+            ]
+        }
+    ]
+}
