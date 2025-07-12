@@ -42,13 +42,13 @@
   .menu-list li {
     padding: 8px 20px;
   }
-  
-  .menu-list li a {
+
+  .menu-list .list-content {
     color: #b63232;
     text-decoration: none;
   }
   
-  .menu-list li a:hover {
+  .menu-list .list-content:hover {
     text-decoration: underline;
   }
  

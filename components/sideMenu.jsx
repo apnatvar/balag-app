@@ -4,8 +4,9 @@
 import React, { useState } from "react";
 import ContactForm from "./contactForm";
 import "../app/styles/components.css";
+import Link from "next/link";
 
-export default function SideMenu() {
+export default function SideMenu({adminURL}) {
     const [isMenuVisible, setMenuVisble] = useState(false);
     const [showForm, setShowForm] = useState(false);
 
@@ -22,12 +23,12 @@ return (
     <nav className="side-menu">
         <button onClick={toggleMenu} className="menu-toggle">☰ Menu</button>
         <ul className={`menu-list ${isMenuVisible ? 'open' : 'closed'}`}>
-        <li><a href="/">Home</a></li>
-        <li><a href="#section2">Section 2</a></li>
-        <li><a href="#section7">Section 7</a></li>
-        <li><a onClick={openForm}>Contact Us</a></li>
-        <li><a href="/about">About Us</a></li>
-        <li><a href="/auth/login">Admin</a></li>
+        <li><Link href="/" className="list-content">Home</Link></li>
+        <li><Link href="#section2" className="list-content">Section 2</Link></li>
+        <li><Link href="#section7" className="list-content">Section 7</Link></li>
+        <li><Link onClick={openForm} className="list-content">Contact Us</Link></li>
+        <li><Link href="/about" className="list-content">About Us</Link></li>
+        <li><Link href={adminURL} className="list-content">Admin</Link></li>
         </ul>
     </nav>
 
