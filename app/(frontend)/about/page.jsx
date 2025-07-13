@@ -15,10 +15,10 @@ import AboutReviewsSection from '@/components/aboutReviews';
 export default function About() {
   const [jsonData, setJsonData] = useState({});
 
-  // useEffect(() => {
-  //   const data = getPayloadData('aboutPage');
-  //   setJsonData(data);
-  // }, []);
+  useEffect(() => {
+    const data = getPayloadData('aboutPage');
+    setJsonData(data);
+  }, []);
 
   console.log("jsonData", jsonData);
   return <h2>Loading...</h2>; // Show loading state while data is being fetched

@@ -10,19 +10,17 @@ export const About: GlobalConfig = {
       name: 'hero',
       type: 'group',
       fields: [
+        { name: 'title', type: 'richText', required: true, },
         { name: 'image', type: 'upload', relationTo: 'media', required: true, },
-        { name: 'imageAlt', type: 'text', required: true, },
         { name: 'logo', type: 'upload', relationTo: 'media', required: true, },
-        { name: 'logoAlt', type: 'text', required: true, },
         {
           name: 'nav',
           type: 'array',
           fields: [
             { name: 'text', type: 'text', required: true, },
-            { name: 'href', type: 'text', required: true, },
+            { name: 'link to', type: 'text', required: true, },
           ],
         },
-        { name: 'title', type: 'richText', required: true, },
       ],
     },
     {
@@ -35,7 +33,6 @@ export const About: GlobalConfig = {
           type: 'array',
           fields: [
             { name: 'image', type: 'upload', relationTo: 'media', required: true, },
-            { name: 'alt', type: 'text', required: true, },
             { name: 'name', type: 'text', required: true, },
             { name: 'designation', type: 'text', required: true, },
           ],
@@ -48,7 +45,6 @@ export const About: GlobalConfig = {
       fields: [
         { name: 'heading', type: 'richText', required: true, },
         { name: 'image', type: 'upload', relationTo: 'media', required: true, },
-        { name: 'alt', type: 'text', required: true, },
         { name: 'paragraph', type: 'richText', required: true, },
       ],
     },
