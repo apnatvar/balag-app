@@ -1,8 +1,11 @@
 import React from "react";
+import { getPayload } from 'payload';
+import config from '@/payload.config';
 
-export default function AboutTeamSection({ teamContent }) {
-    if (!teamContent) return <p>Loading...</p>;
-
+export default async function AboutTeamSection() {
+    const payload = await getPayload({ config });
+    const content = await payload.findGlobal({ slug: 'about' });
+    const teamContent = content.team;
     return (
       <section className="team">
         <h2 className="heading">{teamContent.heading}</h2>
@@ -14,18 +17,16 @@ export default function AboutTeamSection({ teamContent }) {
 
     function generateTeamCards(members) {
 
-        if (!members) return <p>Loading...</p>;
-
-        return members.map((member, index) => (
-          <div className="team-member" key={index}>
-            <img
-              className="image"
-              loading="lazy"
-              src={member.image}
-              alt={member.alt} />
-            <h4 className="name">{member.name}</h4>
-            <p className="role">{member.role}</p>
-          </div>
-        ));
+      return members.map((member, index) => (
+        <div className="team-member" key={index}>
+          <img
+            className="image"
+            loading="lazy"
+            src={member.image.url}
+            alt={member.image.alt} />
+          <h4 className="name">{member.name}</h4>
+          <p className="role">{member.role}</p>
+        </div>
+      ));
     }
 }

@@ -1,8 +1,11 @@
 import React from "react";
+import { getPayload } from 'payload';
+import config from '@/payload.config';
 
-export default function AboutFounderSection({ founderContent }) {
-
-    if (!founderContent) return <p>Loading...</p>;
+export default async function AboutFounderSection() {
+    const payload = await getPayload({ config });
+    const content = await payload.findGlobal({ slug: 'about' });
+    const founderContent = content.founder;
 
     return (
         <section className="founder-section">
@@ -15,15 +18,13 @@ export default function AboutFounderSection({ founderContent }) {
 
     function generateFounderCards(founders) {
 
-        if (!founders) return <p>Loading...</p>;
-
         return founders.map((founder, index) => (
             <div className="founder" key={index}>
                 <img 
                     className="image"
                     loading="lazy"
-                    src={founder.image}
-                    alt={founder.name} />
+                    src={founder.image.url}
+                    alt={founder.image.alt} />
                 <h4 className="name">{founder.name}</h4>
                 <p className="designation">{founder.designation}</p>
             </div>

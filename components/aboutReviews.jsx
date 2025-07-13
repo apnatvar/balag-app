@@ -1,8 +1,11 @@
 import React from "react";
+import { getPayload } from 'payload';
+import config from '@/payload.config';
 
-export default function AboutReviewsSection({ reviewContent }) {
-
-    if (!reviewContent) return <p>Loading...</p>;
+export default async function AboutReviewsSection() {
+    const payload = await getPayload({ config });
+    const content = await payload.findGlobal({ slug: 'about' });
+    const reviewContent = content.reviews;
 
     return (
         <section className="review-section">
@@ -15,11 +18,9 @@ export default function AboutReviewsSection({ reviewContent }) {
 
     function generateCards(cards) {
 
-        if (!cards) return <p>Loading...</p>;
-
         return cards.map((review, index) => (
             <div key={index} className="card">
-                <img className="image" src={review.image}></img>
+                <img className="image" src={review.image.url} alt={review.image.alt}></img>
                 <div className="overlay">
                     <p className="paragraph">{review.review}</p>
                     <div className="name">{review.name}</div>

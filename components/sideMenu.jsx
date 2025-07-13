@@ -1,6 +1,4 @@
-"use client";
-// This file is used to create a side menu with a contact form.
-
+'use client';
 import React, { useState } from "react";
 import ContactForm from "./contactForm";
 import "../app/styles/components.css";

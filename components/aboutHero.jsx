@@ -1,15 +1,17 @@
 import TypewriterAndFadeAnimation from "./typewriterAndFadeAnimation";
-import React, { useEffect, useState } from 'react';
+import { getPayload } from 'payload';
+import config from '@/payload.config';
 
-export default function AboutHeroSection({ heroContent }) {
-
-    if (!heroContent) return <p>Loading...</p>;
+export default async function AboutHeroSection() {
+    const payload = await getPayload({ config });
+    const content = await payload.findGlobal({ slug: 'about' });
+    const heroContent = content.hero;
 
     return (
         <section className="about-hero">
             <div className="overlay">
-                <img className="image" src={heroContent.image} alt={heroContent.imageAlt}></img>
-                <img className="logo" src={heroContent.logo} alt={heroContent.logoAlt} />
+                <img className="image" src={heroContent.image.url} alt={heroContent.image.alt}></img>
+                <img className="logo" src={heroContent.logo.url} alt={heroContent.logo.alt} />
                 <nav className="nav">
                     {generateNavButtons(heroContent.nav)}
                 </nav>

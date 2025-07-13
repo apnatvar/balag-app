@@ -1,42 +1,36 @@
 import React from "react";
-import "@/app/styles/global.css"; 
-import "@/app/styles/about.css"; 
 // import SideMenu from "@/components/sideMenu";
-// import AboutHeroSection from '@/components/aboutHero';
-// import AboutFounderSection from '@/components/aboutFounder';
-// import AboutOurStorySection from '@/components/aboutOurStory';
-// import AboutTeamSection from '@/components/aboutTeamMembers';
-// import AboutReviewsSection from '@/components/aboutReviews';
+import AboutHeroSection from '@/components/aboutHero';
+import AboutFounderSection from '@/components/aboutFounder';
+import AboutOurStorySection from '@/components/aboutOurStory';
+import AboutTeamSection from '@/components/aboutTeamMembers';
+import AboutReviewsSection from '@/components/aboutReviews';
 // import Footer from '@/components/footer';
 // import { getPayloadData } from '@/components/getContent';
-import { getPayload } from 'payload';
-import config from '@/payload.config';
+import "@/app/styles/global.css"; 
+import "@/app/styles/about.css"; 
 
 export default async function About() {
-  const payload = await getPayload({ config });
-  const result = await payload.findGlobal({ slug: 'about' }); 
-  console.log("hero", result  );
-  return <h2>{result.hero.title}</h2>; // Show loading state while data is being fetched
   return (
     <html lang="en">
         <body>
 
       {/* Right Side Expandable Menu */}
-      <SideMenu />
+      {/* <SideMenu /> */}
         {/* Secondary Hero Section */}
-        <AboutHeroSection heroContent={jsonData.about.hero} />
+        <AboutHeroSection />
 
         {/* Founders Section */}
-        <AboutFounderSection founderContent={jsonData.about.founder} />
+        <AboutFounderSection />
 
         {/* Our Story Section */}
-        <AboutOurStorySection storyContent={jsonData.about.story} />
+        <AboutOurStorySection />
 
         {/* Team Section */}
-        <AboutTeamSection teamContent={jsonData.about.team} />
+        <AboutTeamSection />
 
         {/* Reviews Section */}
-        <AboutReviewsSection reviewContent={jsonData.about.reviews} />
+        <AboutReviewsSection />
       {/* <Footer /> */}
       </body>
     </html>
