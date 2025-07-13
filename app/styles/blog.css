@@ -1,0 +1,45 @@
+/* styles/blog.css */
+
+.blog-container {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: white;
+  color: black;
+  font-family: 'Georgia', serif;
+  line-height: 1.75;
+}
+
+.blog-header .blog-title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: red;
+}
+
+.blog-header .blog-subtitle {
+  font-size: 1.5rem;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.blog-image img {
+  width: 100%;
+  margin: 2rem 0;
+  border: 2px solid red;
+  border-radius: 8px;
+}
+
+.blog-content .paragraph {
+  margin-bottom: 1.5rem;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid red;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: #555;
+}
+
+.blog-content .italic {
+  font-style: italic;
+}
