@@ -1,27 +1,22 @@
-'use client';
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "@/app/styles/global.css"; 
 import "@/app/styles/about.css"; 
-import SideMenu from "@/components/sideMenu";
-import AboutHeroSection from '@/components/aboutHero';
-import AboutFounderSection from '@/components/aboutFounder';
-import AboutOurStorySection from '@/components/aboutOurStory';
-import AboutTeamSection from '@/components/aboutTeamMembers';
-import AboutReviewsSection from '@/components/aboutReviews';
+// import SideMenu from "@/components/sideMenu";
+// import AboutHeroSection from '@/components/aboutHero';
+// import AboutFounderSection from '@/components/aboutFounder';
+// import AboutOurStorySection from '@/components/aboutOurStory';
+// import AboutTeamSection from '@/components/aboutTeamMembers';
+// import AboutReviewsSection from '@/components/aboutReviews';
 // import Footer from '@/components/footer';
 // import { getPayloadData } from '@/components/getContent';
-  
+import { getPayload } from 'payload';
+import config from '@/payload.config';
 
-export default function About() {
-  const [jsonData, setJsonData] = useState({});
-
-  useEffect(() => {
-    const data = getPayloadData('aboutPage');
-    setJsonData(data);
-  }, []);
-
-  console.log("jsonData", jsonData);
-  return <h2>Loading...</h2>; // Show loading state while data is being fetched
+export default async function About() {
+  const payload = await getPayload({ config });
+  const result = await payload.findGlobal({ slug: 'about' }); 
+  console.log("hero", result  );
+  return <h2>{result.hero.title}</h2>; // Show loading state while data is being fetched
   return (
     <html lang="en">
         <body>

@@ -10,15 +10,15 @@ export const About: GlobalConfig = {
       name: 'hero',
       type: 'group',
       fields: [
-        { name: 'title', type: 'richText', required: true, },
-        { name: 'image', type: 'upload', relationTo: 'media', required: true, },
-        { name: 'logo', type: 'upload', relationTo: 'media', required: true, },
+        { name: 'title', type: 'text',  },
+        { name: 'image', type: 'upload', relationTo: 'media',  },
+        { name: 'logo', type: 'upload', relationTo: 'media',  },
         {
           name: 'nav',
           type: 'array',
           fields: [
-            { name: 'text', type: 'text', required: true, },
-            { name: 'link to', type: 'text', required: true, },
+            { name: 'text', type: 'text',  },
+            { name: 'link to', type: 'text',  },
           ],
         },
       ],
@@ -27,14 +27,14 @@ export const About: GlobalConfig = {
       name: 'founder',
       type: 'group',
       fields: [
-        { name: 'heading', type: 'richText', required: true, },
+        { name: 'heading', type: 'text',  },
         {
           name: 'founders',
           type: 'array',
           fields: [
-            { name: 'image', type: 'upload', relationTo: 'media', required: true, },
-            { name: 'name', type: 'text', required: true, },
-            { name: 'designation', type: 'text', required: true, },
+            { name: 'image', type: 'upload', relationTo: 'media',  },
+            { name: 'name', type: 'text',  },
+            { name: 'designation', type: 'text',  },
           ],
         },
       ],
@@ -43,23 +43,23 @@ export const About: GlobalConfig = {
       name: 'story',
       type: 'group',
       fields: [
-        { name: 'heading', type: 'richText', required: true, },
-        { name: 'image', type: 'upload', relationTo: 'media', required: true, },
-        { name: 'paragraph', type: 'richText', required: true, },
+        { name: 'heading', type: 'text',  },
+        { name: 'image', type: 'upload', relationTo: 'media',  },
+        { name: 'paragraph', type: 'text',  },
       ],
     },
     {
       name: 'team',
       type: 'group',
       fields: [
-        { name: 'heading', type: 'richText', required: true, },
+        { name: 'heading', type: 'text',  },
         {
           name: 'members',
           type: 'array',
           fields: [
-            { name: 'name', type: 'text', required: true, },
-            { name: 'image', type: 'upload', relationTo: 'media', required: true, },
-            { name: 'role', type: 'text', required: true, },
+            { name: 'name', type: 'text',  },
+            { name: 'image', type: 'upload', relationTo: 'media',  },
+            { name: 'role', type: 'text',  },
           ],
         },
       ],
@@ -68,14 +68,14 @@ export const About: GlobalConfig = {
       name: 'reviews',
       type: 'group',
       fields: [
-        { name: 'heading', type: 'richText', required: true, },
+        { name: 'heading', type: 'text',  },
         {
           name: 'cards',
           type: 'array',
           fields: [
-            { name: 'image', type: 'upload', relationTo: 'media', required: true, },
-            { name: 'review', type: 'richText', required: true, },
-            { name: 'name', type: 'text', required: true, },
+            { name: 'image', type: 'upload', relationTo: 'media',  },
+            { name: 'review', type: 'text',  },
+            { name: 'name', type: 'text',  },
           ],
         },
       ],
