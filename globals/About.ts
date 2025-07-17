@@ -13,8 +13,7 @@ export const About: GlobalConfig = {
         { name: 'title', type: 'text',  },
         { name: 'image', type: 'upload', relationTo: 'media',  },
         { name: 'logo', type: 'upload', relationTo: 'media',  },
-        {
-          name: 'nav',
+        { name: 'nav',
           type: 'array',
           fields: [
             { name: 'text', type: 'text',  },
@@ -28,8 +27,7 @@ export const About: GlobalConfig = {
       type: 'group',
       fields: [
         { name: 'heading', type: 'text',  },
-        {
-          name: 'founders',
+        { name: 'founders',
           type: 'array',
           fields: [
             { name: 'image', type: 'upload', relationTo: 'media',  },
@@ -45,7 +43,7 @@ export const About: GlobalConfig = {
       fields: [
         { name: 'heading', type: 'text',  },
         { name: 'image', type: 'upload', relationTo: 'media',  },
-        { name: 'paragraph', type: 'text',  },
+        { name: 'paragraph', type: 'textarea',  },
       ],
     },
     {
@@ -74,7 +72,7 @@ export const About: GlobalConfig = {
           type: 'array',
           fields: [
             { name: 'image', type: 'upload', relationTo: 'media',  },
-            { name: 'review', type: 'text',  },
+            { name: 'review', type: 'textarea',  },
             { name: 'name', type: 'text',  },
           ],
         },

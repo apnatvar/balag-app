@@ -14,15 +14,17 @@
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   color: red;
+  text-align: center;
 }
 
 .blog-header .blog-subtitle {
   font-size: 1.5rem;
   color: #444;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
-.blog-image img {
+.blog-image img, video {
   width: 100%;
   margin: 2rem 0;
   border: 2px solid red;
@@ -31,6 +33,7 @@
 
 .blog-content .paragraph {
   margin-bottom: 1.5rem;
+  text-align: justify;
 }
 
 .blog-content blockquote {

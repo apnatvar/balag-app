@@ -248,3 +248,118 @@
     }
   }
   
+  /* VideoCarousel.css */
+
+.carousel-section {
+  background: white;
+  color: black;
+  padding: 2rem;
+  text-align: center;
+}
+
+.carousel-section h2 {
+  color: red;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.carousel-section .subtitle {
+  margin: 0.5rem 0 1.5rem;
+  color: #333;
+  font-size: 1rem;
+}
+
+.carousel-section .carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-section .carousel-container {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.carousel-section .carousel-item {
+  flex: 0 0 33.3333%;
+  box-sizing: border-box;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-section .carousel-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+.carousel-section .carousel-item h3 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1rem;
+  color: black;
+}
+
+.carousel-section .carousel-item time {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+/* Navigation Buttons */
+.carousel-section .nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 0, 0, 0.8);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 1.5rem;
+  line-height: 1;
+  border-radius: 4px;
+}
+
+.carousel-section .nav.left { left: 0.5rem; }
+.carousel-section .nav.right { right: 0.5rem; }
+
+/* ---------- Responsive Styles ---------- */
+@media (max-width: 768px) {
+  .carousel-section .carousel-item {
+    flex: 0 0 66.6666%; /* show 1 full + partial */
+  }
+
+  .carousel-section .carousel-item h3 {
+    font-size: 0.95rem;
+  }
+
+  .carousel-section .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .carousel-section .nav {
+    padding: 0.4rem 0.8rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-section .carousel-item {
+    flex: 0 0 80%; /* show 1 full + 1 smaller partial */
+  }
+
+  .carousel-section .carousel-item h3 {
+    font-size: 0.9rem;
+  }
+
+  .carousel-section .carousel-item time {
+    font-size: 0.75rem;
+  }
+
+  .carousel-section .subtitle {
+    font-size: 0.85rem;
+  }
+}

@@ -6,6 +6,10 @@ export const Blogs: CollectionConfig = {
   fields: [
     { name: 'heading', type: 'text', required: true, },
     { name: 'slug', type: 'text', required: true, unique: true },
+    { name: 'publishedDate', type: 'date', required: true, defaultValue: () => {
+        const today = new Date();
+        return today.toISOString().split('T')[0];
+    },},
     { name: 'subheading', type: 'text' },
     { name: 'paragraph1', type: 'textarea' },
     { name: 'paragraph2', type: 'textarea' },
