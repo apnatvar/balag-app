@@ -1,31 +1,12 @@
-import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
-import '../pages/styles/components.css';
+import React from 'react';
 
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="content">
-        <div className="column left">
-          <ul className="links">
-            <li><a href="#" className="link">About</a></li>
-            <li><a href="#" className="link">Gallery</a></li>
-            <li><a href="#" className="link">Blogs</a></li>
-            <li><a href="#" className="link">Contact Us</a></li>
-            <li><a href="#" className="link">Work With Us</a></li>
-          </ul>
-        </div>
-        <div className="column right">
-          <p className="title">Connect with us</p>
-          <div className="social-icons">
-            <a href="#" className="social-link"><FaFacebook /></a>
-            <a href="#" className="social-link"><FaInstagram /></a>
-            <a href="#" className="social-link"><FaYoutube /></a>
-          </div>
-        </div>
-      </div>
-
-      <div className="bottom">
-        <p>Created by <span className="creator">Brownsmith Dynamics</span></p>
+      <div className="footer-content">
+        <input type="image" id="hiddenImageInput" />
+        <p>© 2023 Balag. All rights reserved.</p>
+        <p>Made with ❤️ by <a href="https://example.com">Your Name</a></p>
       </div>
     </footer>
   );

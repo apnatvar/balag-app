@@ -117,10 +117,6 @@ export default function IndexMapSection() {
                 </div>
                 </div>
             </div>
-
-            <div className="footer">
-                <h2 className="text">Where do you want your story written?</h2>
-            </div>
         </section>
     );
   }

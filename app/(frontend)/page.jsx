@@ -4,10 +4,17 @@ import IndexOverlay from '@/components/indexOverlay';
 import IndexWorkSummarySection from '@/components/indexWorkSummary';
 import IndexStatsSection from '@/components/indexStats';
 import IndexMapSection from '@/components/indexMapSection';
+import Footer from '@/components/footer';
+
+import { getPayload } from "payload";
+import config from "@/payload.config";
+
 import '@/app/styles/global.css';
 import '@/app/styles/index.css';
 
-export default function App(){
+export default async function IndexPage(){
+  // const payload = await getPayload({ config });
+  // const content = await payload.findGlobal({ slug: 'home' });
   return (
     <html lang="en">  
       <body>
@@ -19,13 +26,7 @@ export default function App(){
           <IndexWorkSummarySection />
           <IndexMapSection />
 
-          <section id="footer" className="footer">
-            <div className="footer-content">
-              <input type="image" id="hiddenImageInput" />
-              <p>© 2023 Balag. All rights reserved.</p>
-              <p>Made with ❤️ by <a href="https://example.com">Your Name</a></p>
-            </div>
-          </section>
+          <Footer />
         </body>
         </html>
   );

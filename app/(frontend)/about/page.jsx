@@ -5,12 +5,14 @@ import AboutFounderSection from '@/components/aboutFounder';
 import AboutOurStorySection from '@/components/aboutOurStory';
 import AboutTeamSection from '@/components/aboutTeamMembers';
 import AboutReviewsSection from '@/components/aboutReviews';
+import { getPayload } from "payload";
+import config from "@/payload.config";
 import "@/app/styles/global.css"; 
 import "@/app/styles/about.css"; 
 
 export default async function About() {
-    const payload = await getPayload({ config });
-    const content = await payload.findGlobal({ slug: 'about' });
+  const payload = await getPayload({ config });
+  const content = await payload.findGlobal({ slug: 'about' });
   return (
     <html lang="en">
         <body>
