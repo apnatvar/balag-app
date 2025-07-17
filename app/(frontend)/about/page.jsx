@@ -9,6 +9,8 @@ import "@/app/styles/global.css";
 import "@/app/styles/about.css"; 
 
 export default async function About() {
+    const payload = await getPayload({ config });
+    const content = await payload.findGlobal({ slug: 'about' });
   return (
     <html lang="en">
         <body>
@@ -16,19 +18,19 @@ export default async function About() {
       {/* Right Side Expandable Menu */}
       <SideMenu />
         {/* Secondary Hero Section */}
-        <AboutHeroSection />
+        <AboutHeroSection heroContent={content.hero} />
 
         {/* Founders Section */}
-        <AboutFounderSection />
+        <AboutFounderSection founderContent={content.founder} />
 
         {/* Our Story Section */}
-        <AboutOurStorySection />
+        <AboutOurStorySection storyContent={content.story} />
 
         {/* Team Section */}
-        <AboutTeamSection />
+        <AboutTeamSection teamContent={content.team} />
 
         {/* Reviews Section */}
-        <AboutReviewsSection />
+        <AboutReviewsSection reviewContent={content.reviews} />
       {/* <Footer /> */}
       </body>
     </html>

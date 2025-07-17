@@ -1,11 +1,7 @@
 import React from "react";
-import { getPayload } from 'payload';
-import config from '@/payload.config';
 
-export default async function AboutTeamSection() {
-    const payload = await getPayload({ config });
-    const content = await payload.findGlobal({ slug: 'about' });
-    const teamContent = content.team;
+export default function AboutTeamSection({teamContent}) {
+
     return (
       <section className="team">
         <h2 className="heading">{teamContent.heading}</h2>

@@ -1,11 +1,7 @@
+import React from "react";
 import TypewriterAndFadeAnimation from "./typewriterAndFadeAnimation";
-import { getPayload } from 'payload';
-import config from '@/payload.config';
 
-export default async function AboutHeroSection() {
-    const payload = await getPayload({ config });
-    const content = await payload.findGlobal({ slug: 'about' });
-    const heroContent = content.hero;
+export default function AboutHeroSection({heroContent}) {
 
     return (
         <section className="about-hero">

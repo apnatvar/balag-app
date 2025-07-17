@@ -1,11 +1,6 @@
 import React from "react";
-import { getPayload } from 'payload';
-import config from '@/payload.config';
 
-export default async function AboutFounderSection() {
-    const payload = await getPayload({ config });
-    const content = await payload.findGlobal({ slug: 'about' });
-    const founderContent = content.founder;
+export default function AboutFounderSection({founderContent}) {
 
     return (
         <section className="founder-section">
