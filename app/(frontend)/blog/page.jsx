@@ -1,34 +1,31 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
+import React from "react";
 import SideMenu from "@/components/sideMenu";
+import { getPayload } from 'payload';
+import config from '@/payload.config';
+import Link from 'next/link';
+import { NotFound } from "payload";
 
-export default function BlogPage() {
-  const [jsonData, setJsonData] = useState({});
+export default async function BlogPage() {
+  const payload = await getPayload({ config });
+  const { allBlogs } = await payload.find({ collection: 'blogs', slug: 'blog-slug' });
+  const content= await payload.findGlobal({ slug: "blog-page" });
+  console.log("content", content);
+  const blogs = allBlogs[0];
 
-  useEffect(() => {
-    fetch("http://localhost:5000/blog/")
-      .then((res) => res.json())
-      .then((data) => {
-        setJsonData(data);
-      })
-      .catch((err) => {
-        console.error("Failed to load JSON:", err);
-      });
-  }, []);
-
-  if (!jsonData.page) return <p>Loading...</p>;
+  if (!content || !blogs) {
+    return <NotFound />;
+  }
 
   return (
     <html lang="en">
       <body>
         <SideMenu />
         <section className="blog-hero">
-          <h1 className="heading">{jsonData.page.heading}</h1>
-          <p className="subheading">{jsonData.page.subheading}</p>
-            <div className="blog-cards">
-              {generateBlogCards(jsonData.blogs)}
-            </div>
+          <h1 className="heading">{content.heading}</h1>
+          <p className="subheading">{content.subheading}</p>
+          <div className="blog-cards">
+            {generateBlogCards(blogs)}
+          </div>
         </section>
       </body>
     </html>
@@ -37,16 +34,17 @@ export default function BlogPage() {
   function generateBlogCards(blogs) {
     if (!blogs) return <p>Loading...</p>;
 
-    return Object.entries(blogs).map(([route, blog]) => (
-      <div className="card" key={route} >
-        <h2 className="title" >{blog.title}</h2>
+    return Object.entries(blogs).map(([slug, blog]) => (
+      <div className="card" key={slug}>
+        <h2 className="title">{blog.heading}</h2>
         <img
           className="image"
           loading="lazy"
-          src={blog.image}
-          alt={blog.alt}
+          src={blog.image1.url}
+          alt={blog.image1.alt}
         />
-        <a className="description" href={`/blog/${route}`}>{blog.brief}</a>
+        <p className="date">{blog.publishedDate}</p>
+        <Link className="description" href={`/blog/${slug}`}>Read More</Link>
       </div>
     ));
   }

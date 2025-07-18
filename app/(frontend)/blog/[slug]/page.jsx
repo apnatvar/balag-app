@@ -1,24 +1,22 @@
 import { getPayload } from 'payload';
 import config from '@/payload.config';
 import { headers } from 'next/headers';
+import SideMenu from "@/components/sideMenu";
+
 import '@/app/styles/blog.css'; 
 
 export default async function BlogPost({ params }) {
   const requestHeaders = await headers();
-  const slug = await requestHeaders.get('title');
+  const slug = requestHeaders.get('slug');
   const payload = await getPayload({ config });
-  const { docs } = await payload.find({
-    collection: 'blogs',
-    slug: slug,
-  });
-
+  const { docs } = await payload.find({ collection: 'blogs', slug: slug, });
   const post = docs[0];
-  console.log(post);
   if (!post) return <div className="blog-container">Post not found.</div>;
 
   return (
     <html lang="en">
       <body>
+        <SideMenu />
         <article className="blog-container">
           <section className="blog-image">
             <video controls>
