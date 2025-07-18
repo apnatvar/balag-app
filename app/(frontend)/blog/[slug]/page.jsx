@@ -1,7 +1,10 @@
-import { getPayload } from 'payload';
-import config from '@/payload.config';
-import { headers } from 'next/headers';
+import React from "react";
 import SideMenu from "@/components/sideMenu";
+import { headers } from 'next/headers';
+
+import { getPayload, NotFound } from 'payload';
+import config from '@/payload.config';
+import { NotFound } from 'payload';
 
 import '@/app/styles/blog.css'; 
 
@@ -11,7 +14,7 @@ export default async function BlogPost({ params }) {
   const payload = await getPayload({ config });
   const { docs } = await payload.find({ collection: 'blogs', slug: slug, });
   const post = docs[0];
-  if (!post) return <div className="blog-container">Post not found.</div>;
+  if (!post) return <NotFound />;
 
   return (
     <html lang="en">

@@ -1,8 +1,10 @@
 import React from "react";
+import Link from 'next/link';
+
 import SideMenu from "@/components/sideMenu";
+
 import { getPayload } from 'payload';
 import config from '@/payload.config';
-import Link from 'next/link';
 import { NotFound } from "payload";
 
 export default async function BlogPage() {
