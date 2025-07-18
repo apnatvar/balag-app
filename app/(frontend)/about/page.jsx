@@ -1,5 +1,6 @@
 import React from "react";
 import SideMenu from "@/components/sideMenu";
+import Footer from "@/components/footer";
 import AboutHeroSection from '@/components/aboutHero';
 import AboutFounderSection from '@/components/aboutFounder';
 import AboutOurStorySection from '@/components/aboutOurStory';
@@ -39,7 +40,8 @@ export default async function About() {
 
         {/* Reviews Section */}
         <AboutReviewsSection reviewContent={content.reviews} />
-      {/* <Footer /> */}
+        
+      <Footer />
       </body>
     </html>
   );

@@ -15,7 +15,7 @@ import '@/app/styles/index.css';
 
 export default async function IndexPage(){
   const payload = await getPayload({ config });
-  const content = await payload.findGlobal({ slug: 'home' });
+  const content = await payload.findGlobal({ slug: 'index' });
   if (!content) {
     return <NotFound />;
   }
@@ -29,7 +29,6 @@ export default async function IndexPage(){
           <IndexStatsSection />
           <IndexWorkSummarySection />
           <IndexMapSection />
-
           <Footer />
         </body>
         </html>
