@@ -2,55 +2,78 @@ import { GlobalConfig } from 'payload';
 
 export const LandingPage: GlobalConfig = {
   slug: 'index',
+  access: {
+    read: () => true,
+  },
   fields: [
+    {
+      name: 'overlay',
+      type: 'group',
+      fields: [
+        { name: 'title ', type: 'text' },
+        { name: 'subtitle', type: 'text' },
+      ],
+    },
     {
       name: 'hero',
       type: 'group',
       fields: [
+        { name: 'title', type: 'text'},
+        { name: 'videos', type: 'array', required: true, maxRows: 10,
+          fields: [
+            { name: 'video', type: 'upload', relationTo: 'media' },
+          ]
+        },
+      ],
+    },
+    {
+      name: 'workSummary',
+      type: 'group',
+      fields: [
+        { name: 'title', type: 'text' },
+        { name: 'description', type: 'textarea' },
+        { name: 'image', type: 'upload', relationTo: 'media' },
+      ],
+    },
+    {
+      name: 'presentStatistic',
+      type: 'group',
+      fields: [
+        { name: 'title', type: 'text' },
+        { name: 'caption', type: 'textarea' },
+        { name: 'video', type: 'upload', relationTo: 'media' },
+        { name: 'statistics', type: 'array', maxRows: 3,
+          fields: [
+            { name: 'label', type: 'text' },
+            { name: 'value', type: 'number' },
+          ] 
+        },
+      ],
+    },
+    {
+      name: 'map',
+      type: 'group',
+      fields: [
+        { name: 'sectionHeader', type: 'text' },
         { name: 'mapHeader', type: 'text' },
-        { name: 'mapFooter', type: 'text' },
-        { name: 'textboxHeading', type: 'text' },
-        { name: 'textboxParagraph', type: 'textarea' },
+        { name: 'locations', type: 'array',
+          fields: [
+            { name: 'city', type: 'text' },
+            { name: 'latitude', type: 'number' },
+            { name: 'longitude', type: 'number' },
+            { name: 'link', type: 'text' },
+          ],
+        },
+        { name: 'mapParagraph1', type: 'textarea' },
+        { name: 'mapImages', type: 'array', maxRows: 3, minRows: 3,
+          fields: [
+            { name: 'image', type: 'upload', relationTo: 'media' },
+            { name: 'heading', type: 'text' },
+            { name: 'paragraph', type: 'textarea' },
+          ],
+        },
       ],
-    },
-    {
-      name: 'mapImages',
-      type: 'array',
-      fields: [
-        { name: 'image', type: 'text' },
-        { name: 'heading', type: 'text' },
-        { name: 'paragraph', type: 'textarea' },
-      ],
-    },
-
-    {
-      name: 'locations',
-      type: 'array',
-      fields: [
-        { name: 'name', type: 'text' },
-        { name: 'lat', type: 'number' },
-        { name: 'lon', type: 'number' },
-        { name: 'link', type: 'text' },
-      ],
-    },
-
-    { name: 'overlayTitle', type: 'text' },
-    { name: 'overlaySubtitle', type: 'text' },
-    { name: 'workSummaryTitle', type: 'text' },
-    { name: 'workSummarySubtitle', type: 'text' },
-    { name: 'video', type: 'text' },
-    { name: 'videoNotPlayableText', type: 'text' },
-    { name: 'leftHeading', type: 'text' },
-    { name: 'leftParagraph', type: 'textarea' },
-
-    {
-      name: 'text',
-      type: 'array',
-      fields: [
-        { name: 'number', type: 'text' },
-        { name: 'label', type: 'text' },
-      ],
-    },
-  ],
+    }
+  ]
 };
 

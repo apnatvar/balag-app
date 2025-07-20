@@ -12,7 +12,7 @@ export default async function Footer() {
       <div className="footer-content">
         <Image
           src={content?.logo?.url}
-          alt={content?.logo?.alt || 'Logo'}
+          alt={content?.logo?.alt}
           width={100}
           height={100}
         />
@@ -33,7 +33,7 @@ export default async function Footer() {
           <li key={index}><Link href={item.link} className='link' target='_blank'>{item.placeholder}</Link></li>
         ))}
       </ul>
-    )
+    );
   }
 };
 

@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from "react";
 
-export default function IndexOverlay() {
+export default function IndexOverlay({ overlayContent }) {
     const [showOverlay, setShowOverlay] = useState(false);
   
     useEffect(() => {
@@ -21,10 +21,10 @@ export default function IndexOverlay() {
       <>
         <div className="intro-overlay">
           <div className="intro-content">
-            <h1 className="main-text">Bala G Studios</h1>
+            <h1 className="main-text">{overlayContent.title}</h1>
           </div>
           <div className="intro-content">
-            <p className="fade-in-text">Come write your story with us...</p>
+            <p className="fade-in-text">{overlayContent.subtitle}</p>
           </div>
         </div>
       </>
