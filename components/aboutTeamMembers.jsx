@@ -12,7 +12,6 @@ export default function AboutTeamSection({teamContent}) {
     );
 
     function generateTeamCards(members) {
-
       return members.map((member, index) => (
         <div className="team-member" key={index}>
           <img

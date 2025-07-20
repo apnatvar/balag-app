@@ -20,7 +20,7 @@ export default function IndexStatsSection({ statsContent}) {
             </div>
 
             {/* Right Side: Stats */}
-            <generateStatsBlocks  stats={statsContent.statistics} />
+            {generateStatsBlocks(statsContent.statistics)}
         </div>
     </section>
     );

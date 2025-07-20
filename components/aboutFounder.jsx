@@ -12,7 +12,6 @@ export default function AboutFounderSection({founderContent}) {
     );
 
     function generateFounderCards(founders) {
-
         return founders.map((founder, index) => (
             <div className="founder" key={index}>
                 <img 

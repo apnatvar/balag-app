@@ -12,7 +12,6 @@ export default function AboutReviewsSection({reviewContent}) {
     );
 
     function generateCards(cards) {
-
         return cards.map((review, index) => (
             <div key={index} className="card">
                 <img className="image" src={review.image.url} alt={review.image.alt}></img>

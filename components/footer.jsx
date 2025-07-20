@@ -20,12 +20,12 @@ export default async function Footer() {
         <p className='owner-text'>Made with ❤️ by <Link href="https://example.com" className='owner-link'>BrownSmith Dynamics</Link></p>
       </div>
       <div className="footer-links">
-        <RenderLinks links={content?.links} />
+        {renderLinks(content?.links)}
       </div>
     </footer>
   );
 
-  function RenderLinks({ links }) {
+  function renderLinks({ links }) {
     if (!Array.isArray(links) || links.length === 0) return null
     return (
       <ul className="links-container">

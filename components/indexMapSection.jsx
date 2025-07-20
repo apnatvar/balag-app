@@ -14,7 +14,7 @@ export default function IndexMapSection({ mapContent }) {
                 <div className="map-column">
                     <div className="svg-section">
                         <img loading="lazy" src="assets/india.svg" alt="India Map" className="india-map" />
-                        <generatePins />
+                        {generatePins()}
                     </div>
                     <div className="textbox">
                         <h3 className="heading">{mapContent.mapHeader}</h3>
@@ -23,45 +23,23 @@ export default function IndexMapSection({ mapContent }) {
                 </div>
 
                 {/* RIGHT: 3 International Images with Hover Text */}
-                <div className="international-column">
-                <div className="international-image-box">
-                    <img className="image" loading="lazy" src="assets/intLocations/loc1.jpg" alt="Paris" />
-                    <div className="overlay-on-hover">
-                        <h3 className="heading">Paris, France</h3>
-                        <p className="paragraph">Romantic cityscapes, cinematic shots, timeless storytelling.</p>
-                    </div>
-                </div>
-
-                <div className="international-image-box">
-                    <img className="image" loading="lazy" src="assets/intLocations/loc2.jpg" alt="New York" />
-                    <div className="overlay-on-hover">
-                        <h3 className="heading">New York, USA</h3>
-                        <p className="paragraph">Concrete jungles, urban energy, powerful narratives.</p>
-                    </div>
-                </div>
-
-                <div className="international-image-box">
-                    <img className="image" loading="lazy" src="assets/intLocations/loc3.jpg" alt="Tokyo" />
-                    <div className="overlay-on-hover">
-                        <h3 className="heading">Tokyo, Japan</h3>
-                        <p className="paragraph">Futuristic vibes, cultural fusion, unforgettable frames.</p>
-                    </div>
-                </div>
-                </div>
+                {generateInternationalCards(mapContent.mapImages)}
             </div>
-            <generateInternationalCards cards={mapContent.mapImages} />
         </section>
     );
 
     function generateInternationalCards({ cards }){
         if (!Array.isArray(stats) || cards.length === 0) return null
         return (
-            <div className="international-image-box">
+            <div className="international-column">
                 {cards.map((card, index) => (
-                    <><Image src={card.image.url} alt={card.image.alt} loading='lazy'/><div className="overlay-on-hover" key={cards.index}>
-                        <h3 className="heading">{card.heading}</h3>
-                        <p className="paragraph">{card.paragraph}</p>
-                    </div></>
+                    <div className="international-image-box">
+                        <Image src={card.image.url} alt={card.image.alt} loading='lazy'/>
+                        <div className="overlay-on-hover" key={cards.index}>
+                            <h3 className="heading">{card.heading}</h3>
+                            <p className="paragraph">{card.paragraph}</p>
+                        </div>
+                    </div>
                 ))}
             </div>
         );
