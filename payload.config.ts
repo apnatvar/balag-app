@@ -11,8 +11,10 @@ import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Blogs } from './collections/Blogs'
 
-import { About } from './globals/About'
+import { AboutPage } from './globals/About'
 import { BlogPage } from './globals/BlogPage'
+import { Footer } from './globals/Footer'
+import { LandingPage } from './globals/Home'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -24,7 +26,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  globals: [About, BlogPage],
+  globals: [LandingPage, AboutPage, BlogPage, Footer],
   collections: [Users, Media, Blogs],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || '',

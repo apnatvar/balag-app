@@ -1,6 +1,6 @@
 import { GlobalConfig } from 'payload';
 
-const IndexGlobal: GlobalConfig = {
+export const LandingPage: GlobalConfig = {
   slug: 'index',
   fields: [
     {
@@ -54,4 +54,3 @@ const IndexGlobal: GlobalConfig = {
   ],
 };
 
-export default IndexGlobal;
