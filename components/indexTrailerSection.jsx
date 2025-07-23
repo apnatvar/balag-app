@@ -5,14 +5,8 @@ export default function IndexTrailerSection({ trailerContent }) {
   const [activeCategory, setActiveCategory] = useState('favourites');
   const carouselRef = useRef(null);
 
-  const categories = ['favourites', 'international', 'celebrities', 'classics'];
-
-  const filteredTrailers = trailerContent?.filter(trailer =>
-    activeCategory === 'all' || trailer?.categories.includes(activeCategory)
-  );
-
   const smoothScrollBy = (distance, duration) => {
-    const element = carouselRef.current;
+    const element = carouselRef.current; 
     if (!element) return;
 
     const start = element.scrollLeft;
@@ -41,27 +35,12 @@ export default function IndexTrailerSection({ trailerContent }) {
       <h2 className="heading">{trailerContent.title}</h2>
 
       <div className="filter-buttons">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            data-filter={cat}
-            className={`filter-btn ${activeCategory === cat ? 'active' : ''}`}
-            onClick={() => setActiveCategory(cat)}
-          >
-            {cat.charAt(0).toUpperCase() + cat.slice(1)}
-          </button>
-        ))}
+        {generateCategoryButtons()}
       </div>
 
       <div className="carousel-container">
         <div className="carousel-track" ref={carouselRef}>
-          {filteredTrailers.map((trailer, idx) => (
-            <div key={idx} className="carousel-item">
-              <a href={trailer?.link}>
-                <img src={trailer?.image.url} alt={trailer?.image.alt} />
-              </a>
-            </div>
-          ))}
+          {generateTrailerCards(trailerContent?.trailer)}
         </div>
         <div className="carousel-controls">
           <button className="carousel-next" onClick={() => smoothScrollBy(220, 1000)}>
@@ -71,4 +50,30 @@ export default function IndexTrailerSection({ trailerContent }) {
       </div>
     </section>
   );
+
+  function generateCategoryButtons(){
+    const categories = ['favourites', 'international', 'celebrities', 'classics'];
+    return categories.map((cat) => (
+      <button
+        key={cat}
+        data-filter={cat}
+        className={`filter-btn ${activeCategory === cat ? 'active' : ''}`}
+        onClick={() => setActiveCategory(cat)}
+      >
+        {cat.charAt(0).toUpperCase() + cat.slice(1)}
+      </button>
+    ))
+  }
+
+  function generateTrailerCards(cards){
+    return cards
+        .filter(card => activeCategory === 'all' || card.categories.category === activeCategory)
+        .map(card => (
+        <div key={card.id} className="carousel-item">
+          <a href={`https://${card?.link}`} target='_blank'>
+            <img src={card?.image.url} alt={card?.image.alt} />
+          </a>
+        </div>
+    ))
+  }
 };
