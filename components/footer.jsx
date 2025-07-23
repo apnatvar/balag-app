@@ -17,23 +17,21 @@ export default async function Footer() {
           height={100}
         />
         <p className='main-text'>{content?.mainText}</p>
-        <p className='owner-text'>Made with ❤️ by <Link href="https://example.com" className='owner-link'>BrownSmith Dynamics</Link></p>
+        {/* <p className='owner-text'>Made with ❤️ by <Link href="https://example.com" className='owner-link'>BrownSmith Dynamics</Link></p> */}
       </div>
       <div className="footer-links">
-        {renderLinks(content?.links)}
+        <ul className="links-container">
+          {renderLinks(content?.links)}
+        </ul>
       </div>
     </footer>
   );
 
   function renderLinks({ links }) {
     if (!Array.isArray(links) || links.length === 0) return null
-    return (
-      <ul className="links-container">
-        {links.map((item, index) => (
-          <li key={index}><Link href={item.link} className='link' target='_blank'>{item.placeholder}</Link></li>
-        ))}
-      </ul>
-    );
+    return links.map((item, index) => (
+      <li key={index}><Link href={item.link} className='link' target='_blank'>{item.placeholder}</Link></li>
+    ))
   }
 };
 
