@@ -7,6 +7,7 @@ export const Footer: GlobalConfig = {
   },
   fields: [
     { name: 'mainText', type: 'text', required: true, defaultValue: '© 2023 BalaG Studios' },
+    { name: 'logo', type: 'upload', relationTo: 'media'},
     { name: 'links',
       type: 'array',
       fields: [

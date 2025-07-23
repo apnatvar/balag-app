@@ -31,7 +31,7 @@ export default async function IndexPage(){
         <IndexMapSection mapContent={content.map}/>
         <IndexWorkSummarySection workSummaryContent={content.workSummary}/>
         <IndexStatsSection statsContent={content.presentStatistic}/>
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

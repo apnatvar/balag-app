@@ -44,7 +44,6 @@
     }
   }
 
-
   /*********************************************************************************************/
 
   .work-summary {
@@ -179,7 +178,7 @@
     opacity: 0.85;
   }
 
-  @media (max-width: 786px) {
+  @media (max-width: 650px) {
 
     .stats-section .content {
       flex-direction: column;
@@ -207,6 +206,7 @@
     font-weight: bold;
   }
   }
+
   /**********************************************************************************************************/
 
   /* Core Section Layout */
@@ -324,12 +324,12 @@
   }
 
   /* Section Heading & Footer */
-  .map-and-international-section .header, .footer {
+  .map-and-international-section .header, .map-and-international-section .footer {
     text-align: center;
     margin: 2rem 0 1rem;
   }
 
-  .map-and-international-section .section3-heading h2, .section3-footer .text {
+  .map-and-international-section .section3-heading h2, .map-and-international-section .section3-footer .text {
     display: block;
     font-size: 2rem;
     margin-top: 3rem;
@@ -337,7 +337,7 @@
   }
 
   /* Responsive adjustments */
-  @media (max-width: 786px) {
+  @media (max-width: 650px) {
     .map-and-international-section .map-and-international-wrapper {
       flex-direction: column;
       align-items: center;
@@ -352,14 +352,14 @@
     }
 
     .map-and-international-section .international-image-box {
-      width: 100%;
+      width: 90vw;
       height: auto;
     }
 
     .map-and-international-section .international-image-box .int-image {
       width: 100%;
       height: auto;
-      max-height: none;
+      max-height: 30vh;
     }
   }
 
@@ -397,6 +397,7 @@
   }
 
   /**********************************************************************************************************/
+
   .trailer-section {
     padding: 80px 40px;
     padding-bottom: 10px;
