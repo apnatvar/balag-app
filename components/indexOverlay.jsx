@@ -18,15 +18,13 @@ export default function IndexOverlay({ overlayContent }) {
     if(showOverlay) return null;
 
     return (
-      <>
         <div className="intro-overlay">
           <div className="intro-content">
-            <h1 className="main-text">{overlayContent?.title}</h1>
+            <p className="main-text">{overlayContent?.title}</p>
           </div>
           <div className="intro-content">
             <p className="fade-in-text">{overlayContent?.subtitle}</p>
           </div>
         </div>
-      </>
     );
   }
