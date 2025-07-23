@@ -28,19 +28,25 @@ export default function IndexHeroSection({ heroContent }) {
         <button className="nav-button right" onClick={handleNext}>
           &#9654;
         </button>
-        {heroContent?.videos.map((video, index) => (
-          <video
-            key={index}
-            src={video.url}
-            alt={video.alt}
-            className={`carousel-video ${index === current ? 'active' : ''}`}
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-        ))}
+        {generateCarousel(heroContent?.videos)}
       </div>
     </section>
   );
+
+  function generateCarousel(videos){
+    return videos.map((item, index) => (
+          <video
+            key={index}
+            src={item.video.url}
+            alt={item.video.alt}
+            className={`carousel-video ${index === current ? 'active' : ''}`}
+            loading="lazy"
+            autoPlay
+            muted
+            loop
+          >
+            Your browser does not support HTML5 Video
+            </video>
+        ));
+    }
 }
