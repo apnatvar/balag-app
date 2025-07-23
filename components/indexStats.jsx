@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function IndexStatsSection({ statsContent }) {
-    console.log(statsContent);
+    console.log(statsContent.statistics);
     return (
         <section className="stats-section">
         {/* Background Video */}
@@ -21,22 +21,21 @@ export default function IndexStatsSection({ statsContent }) {
             </div>
 
             {/* Right Side: Stats */}
-            {generateStatsBlocks(statsContent?.statistics)}
+            <div className="right-text">
+                {generateStatsBlocks(statsContent.statistics)}
+            </div>
         </div>
     </section>
     );
 
-    function generateStatsBlocks({ stats }){
+    function generateStatsBlocks(stats){
+        console.log(stats)
         if (!Array.isArray(stats) || stats.length === 0) return null
-        return (
-            <div className="right-text">
-                {stats.map((item, index) => (
-                    <div className="stat-block">
-                        <div className="stat-number">{item.value}</div>
-                        <div className="stat-label">{item.label}</div>
-                    </div>
-                ))}
+        return stats.map((item, index) => (
+            <div className="stat-block" key={index}>
+                <div className="stat-number">{item.value}</div>
+                <div className="stat-label">{item.label}</div>
             </div>
-        )
+        ))        
     }
 }

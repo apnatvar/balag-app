@@ -166,7 +166,7 @@
   }
 
   .stats-section .right-text .stat-block {
-    text-align: right;
+    text-align: center;
   }
 
   .stats-section .right-text .stat-number {
@@ -195,12 +195,17 @@
     }
     .stats-section .right-text {
       align-items: center;
-      font-size: 1rem;
+      font-size: 0.5rem;
       gap: 0rem;
     }
     .stats-section .right-text .stat-block {
       text-align: center;
     }
+
+    .stats-section .right-text .stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
   }
   /**********************************************************************************************************/
 
