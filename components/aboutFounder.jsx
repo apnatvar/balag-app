@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function AboutFounderSection({founderContent}) {
-
     return (
         <section className="founder-section">
             <h2 className="heading">{founderContent.heading}</h2>

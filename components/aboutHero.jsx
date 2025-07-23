@@ -2,7 +2,6 @@ import React from "react";
 import TypewriterAndFadeAnimation from "./typewriterAndFadeAnimation";
 
 export default function AboutHeroSection({heroContent}) {
-
     return (
         <section className="about-hero">
             <div className="overlay">

@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function IndexStatsSection({ statsContent }) {
-    console.log(statsContent.statistics);
     return (
         <section className="stats-section">
         {/* Background Video */}
@@ -29,7 +28,6 @@ export default function IndexStatsSection({ statsContent }) {
     );
 
     function generateStatsBlocks(stats){
-        console.log(stats)
         if (!Array.isArray(stats) || stats.length === 0) return null
         return stats.map((item, index) => (
             <div className="stat-block" key={index}>

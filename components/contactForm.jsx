@@ -2,7 +2,6 @@ import React from "react";
 
 export default function ContactForm({ isFormVisible, onClose }) {
   if (!isFormVisible) return null;
-
   return (
     <div className="form-overlay">
         <div className="form-container">

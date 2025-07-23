@@ -35,18 +35,17 @@ export default function IndexHeroSection({ heroContent }) {
 
   function generateCarousel(videos){
     return videos.map((item, index) => (
-          <video
-            key={index}
-            src={item.video.url}
-            alt={item.video.alt}
-            className={`carousel-video ${index === current ? 'active' : ''}`}
-            loading="lazy"
-            autoPlay
-            muted
-            loop
-          >
-            Your browser does not support HTML5 Video
-            </video>
-        ));
-    }
+      <video
+        key={index}
+        src={item.video.url}
+        alt={item.video.alt}
+        className={`carousel-video ${index === current ? 'active' : ''}`}
+        autoPlay
+        muted
+        loop
+      >
+        Your browser does not support HTML5 Video
+      </video>
+    ));
+  }
 }

@@ -1,7 +1,6 @@
 import React from "react";
 
 export default async function AboutStorySection({storyContent}) {
-
   return (
     <section className="our-story">
       <h2 className="heading">{storyContent.heading}</h2>

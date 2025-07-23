@@ -10,7 +10,7 @@ export const LandingPage: GlobalConfig = {
       name: 'overlay',
       type: 'group',
       fields: [
-        { name: 'title ', type: 'text' },
+        { name: 'title', type: 'text' },
         { name: 'subtitle', type: 'text' },
       ],
     },
@@ -31,7 +31,7 @@ export const LandingPage: GlobalConfig = {
       type: 'group',
       fields: [
         { name: 'title', type: 'text' },
-        { name: 'trailer', type: 'group',
+        { name: 'trailer', type: 'array',
           fields: [
             { name: 'image', type: 'upload', relationTo: 'media' },
             { name: 'link', type: 'text'},
@@ -61,7 +61,7 @@ export const LandingPage: GlobalConfig = {
           ],
         },
         { name: 'mapParagraph', type: 'textarea' },
-        { name: 'mapImages', type: 'array', maxRows: 3, minRows: 3,
+        { name: 'highlightImages', type: 'array', maxRows: 3, minRows: 3,
           fields: [
             { name: 'image', type: 'upload', relationTo: 'media' },
             { name: 'heading', type: 'text' },

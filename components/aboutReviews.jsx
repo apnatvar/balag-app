@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function AboutReviewsSection({reviewContent}) {
-
     return (
         <section className="review-section">
             <h2>{reviewContent.heading}</h2>

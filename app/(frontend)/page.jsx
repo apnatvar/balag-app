@@ -18,7 +18,6 @@ import '@/app/styles/index.css';
 export default async function IndexPage(){
   const payload = await getPayload({ config });
   const content = await payload.findGlobal({ slug: 'index' });
-  console.log(content)
   if (!content) {
     return <NotFound />;
   }
@@ -26,13 +25,13 @@ export default async function IndexPage(){
     <html lang="en">  
       <body>
         <SideMenu />
+        <IndexOverlay overlayContent={content.overlay}/>
         <IndexHeroSection heroContent={content.hero} />
         <IndexTrailerSection trailerContent={content.trailers}/>
-        <IndexOverlay overlayContent={content.overlay}/>
-        <IndexStatsSection statsContent={content.presentStatistic}/>
-        <IndexWorkSummarySection workSummaryContent={content.workSummary}/>
         <IndexMapSection mapContent={content.map}/>
-        <Footer />
+        <IndexWorkSummarySection workSummaryContent={content.workSummary}/>
+        <IndexStatsSection statsContent={content.presentStatistic}/>
+        {/* <Footer /> */}
       </body>
     </html>
   );

@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function AboutTeamSection({teamContent}) {
-
     return (
       <section className="team">
         <h2 className="heading">{teamContent.heading}</h2>

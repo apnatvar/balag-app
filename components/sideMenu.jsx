@@ -17,7 +17,7 @@ export default function SideMenu() {
     const closeForm = () => setShowForm(false);
 
 return (
-    <>
+    <header>
     <nav className="side-menu">
         <button onClick={toggleMenu} className="menu-toggle">☰ Menu</button>
         <ul className={`menu-list ${isMenuVisible ? 'open' : 'closed'}`}>
@@ -30,7 +30,7 @@ return (
     </nav>
 
     <ContactForm isFormVisible={showForm} onClose={closeForm} />
-    </>
+    </header>
     );
 }
   

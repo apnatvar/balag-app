@@ -16,7 +16,6 @@ export default function IndexOverlay({ overlayContent }) {
     }, []);
     
     if(showOverlay) return null;
-
     return (
         <div className="intro-overlay">
           <div className="intro-content">
