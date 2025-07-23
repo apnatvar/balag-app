@@ -5,7 +5,7 @@ export default function AboutHeroSection({heroContent}) {
     return (
         <section className="about-hero">
             <div className="overlay">
-                <img className="image" src={heroContent.image.url} alt={heroContent.image.alt}></img>
+                <img className="image" src={heroContent.image.url} alt={heroContent.image.alt} />
                 <img className="logo" src={heroContent.logo.url} alt={heroContent.logo.alt} />
                 <nav className="nav">
                     {generateNavButtons(heroContent.nav)}
