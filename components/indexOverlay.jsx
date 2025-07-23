@@ -21,10 +21,10 @@ export default function IndexOverlay({ overlayContent }) {
       <>
         <div className="intro-overlay">
           <div className="intro-content">
-            <h1 className="main-text">{overlayContent.title}</h1>
+            <h1 className="main-text">{overlayContent?.title}</h1>
           </div>
           <div className="intro-content">
-            <p className="fade-in-text">{overlayContent.subtitle}</p>
+            <p className="fade-in-text">{overlayContent?.subtitle}</p>
           </div>
         </div>
       </>

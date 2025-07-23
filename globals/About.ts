@@ -1,6 +1,6 @@
 import { GlobalConfig } from 'payload';
 
-export const About: GlobalConfig = {
+export const AboutPage: GlobalConfig = {
   slug: 'about',
   access: {
     read: () => true,

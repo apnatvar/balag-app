@@ -19,10 +19,54 @@ export const LandingPage: GlobalConfig = {
       type: 'group',
       fields: [
         { name: 'title', type: 'text'},
-        { name: 'videos', type: 'array', required: true, maxRows: 10,
+        { name: 'videos', type: 'array', required: true, maxRows: 5,
           fields: [
             { name: 'video', type: 'upload', relationTo: 'media' },
           ]
+        },
+      ],
+    },
+    {
+      name: 'trailers',
+      type: 'group',
+      fields: [
+        { name: 'title', type: 'text' },
+        { name: 'trailer', type: 'group',
+          fields: [
+            { name: 'image', type: 'upload', relationTo: 'media' },
+            { name: 'link', type: 'text'},
+            { name: 'categories', type: 'group',
+              fields: [
+                {name: 'category', type:'select', required: true,
+                  options: ['favourites', 'international', 'celebrities', 'classics']}
+              ]
+            },
+          ]
+        },
+        { name: 'next', type: 'text'},
+      ],
+    },
+    {
+      name: 'map',
+      type: 'group',
+      fields: [
+        { name: 'sectionHeader', type: 'text' },
+        { name: 'mapHeader', type: 'text' },
+        { name: 'locations', type: 'array',
+          fields: [
+            { name: 'city', type: 'text' },
+            { name: 'latitude', type: 'number' },
+            { name: 'longitude', type: 'number' },
+            { name: 'link', type: 'text' },
+          ],
+        },
+        { name: 'mapParagraph', type: 'textarea' },
+        { name: 'mapImages', type: 'array', maxRows: 3, minRows: 3,
+          fields: [
+            { name: 'image', type: 'upload', relationTo: 'media' },
+            { name: 'heading', type: 'text' },
+            { name: 'paragraph', type: 'textarea' },
+          ],
         },
       ],
     },
@@ -31,7 +75,7 @@ export const LandingPage: GlobalConfig = {
       type: 'group',
       fields: [
         { name: 'title', type: 'text' },
-        { name: 'description', type: 'textarea' },
+        { name: 'description', type: 'textarea',},
         { name: 'image', type: 'upload', relationTo: 'media' },
       ],
     },
@@ -50,30 +94,6 @@ export const LandingPage: GlobalConfig = {
         },
       ],
     },
-    {
-      name: 'map',
-      type: 'group',
-      fields: [
-        { name: 'sectionHeader', type: 'text' },
-        { name: 'mapHeader', type: 'text' },
-        { name: 'locations', type: 'array',
-          fields: [
-            { name: 'city', type: 'text' },
-            { name: 'latitude', type: 'number' },
-            { name: 'longitude', type: 'number' },
-            { name: 'link', type: 'text' },
-          ],
-        },
-        { name: 'mapParagraph1', type: 'textarea' },
-        { name: 'mapImages', type: 'array', maxRows: 3, minRows: 3,
-          fields: [
-            { name: 'image', type: 'upload', relationTo: 'media' },
-            { name: 'heading', type: 'text' },
-            { name: 'paragraph', type: 'textarea' },
-          ],
-        },
-      ],
-    }
   ]
 };
 

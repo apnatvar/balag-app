@@ -6,30 +6,30 @@ export default function IndexMapSection({ mapContent }) {
     return (
         <section className="map-and-international-section">
             <div className="header">
-                <h2 className="text">{mapContent.sectionHeader}</h2>
+                <h2 className="text">{mapContent?.sectionHeader}</h2>
             </div>
 
             <div className="map-and-international-wrapper">
                 {/* LEFT: India Map + Textbox Below */}
                 <div className="map-column">
                     <div className="svg-section">
-                        <img loading="lazy" src="assets/india.svg" alt="India Map" className="india-map" />
-                        {generatePins()}
+                        <img loading="lazy" src="/public/assets/india.svg" alt="India Map" className="india-map" />
+                        {generatePins(mapContent?.locations)}
                     </div>
                     <div className="textbox">
-                        <h3 className="heading">{mapContent.mapHeader}</h3>
-                        <p className="paragraph">{mapContent.mapParagraph1}</p>
+                        <h3 className="heading">{mapContent?.mapHeader}</h3>
+                        <p className="paragraph">{mapContent?.mapParagraph1}</p>
                     </div>
                 </div>
 
                 {/* RIGHT: 3 International Images with Hover Text */}
-                {generateInternationalCards(mapContent.mapImages)}
+                {generateInternationalCards(mapContent?.mapImages)}
             </div>
         </section>
     );
 
     function generateInternationalCards({ cards }){
-        if (!Array.isArray(stats) || cards.length === 0) return null
+        if (!Array.isArray(cards) || cards.length === 0) return null
         return (
             <div className="international-column">
                 {cards.map((card, index) => (
@@ -46,6 +46,7 @@ export default function IndexMapSection({ mapContent }) {
     }
 
     function generatePins({ locations }) {
+        if (!Array.isArray(locations) || locations.length === 0) return null
         const bounds = {
             topLat: 37.1,
             bottomLat: 8.9,
@@ -61,7 +62,7 @@ export default function IndexMapSection({ mapContent }) {
 
         return (
             locations.map((location, index) => {
-                const { xPercent, yPercent } = latLonToPercent(location.latitude, location.longitude);
+                const { xPercent, yPercent } = latLonToPercent(location?.latitude, location?.longitude);
                     return (
                     <>    
                         <div
@@ -71,9 +72,9 @@ export default function IndexMapSection({ mapContent }) {
                                 left: `${xPercent}%`,
                                 top: `${yPercent}%`,
                             }}
-                            data-location={location.name}
-                            data-link={location.link}
-                            onClick={() => window.location.href = location.link}
+                            data-location={location?.name}
+                            data-link={location?.link}
+                            onClick={() => window.location.href = location?.link}
                         >
                         </div>
                         <span 
