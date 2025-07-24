@@ -16,7 +16,7 @@
     background-color: rgba(0, 0, 0, 0.6); /* Overlay dimming effect */
     display: flex;
     flex-direction: column;
-    color: #f8f6f0;
+    color: var(--preferred-white);
     padding: 2rem;
     text-align: center;
     align-items: center;
@@ -50,7 +50,7 @@
   }
   
   .about-hero .nav-buttons {
-    color: #f8f6f0;
+    color: var(--preferred-white);
     font-size: 1rem;
     text-decoration: none;
     font-weight: 500;
@@ -64,7 +64,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: white;
+    background-color: var(--preferred-white);
     transition: width 0.3s ease;
   }
   
@@ -112,7 +112,7 @@
   
   .founder-section {
     padding: 4rem 2rem;
-    background-color: #f8f6f0;
+    background-color: var(--preferred-white);
     text-align: center;
     width: 100%;
   }
@@ -121,7 +121,7 @@
   .founder-section .founder-heading {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #2b2b2b;
+    color: var(--preferred-black);
   }
   
   /* Founders Grid */
@@ -138,7 +138,7 @@
   .founder-section .founder {
     flex: 1 1 45%;
     overflow: hidden;
-    background-color: #f8f6f0;
+    background-color: var(--preferred-white);
     border-radius: 10px;
     justify-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -162,12 +162,12 @@
   .founder-section .name {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
-    color: #333;
+    color: var(--preferred-black);
   }
   
   .founder-section .designation {
     font-size: 1rem;
-    color: #666;
+    color: var(--preferred-black);
   }
   
   /* Responsive */
@@ -179,7 +179,7 @@
   
   /*****************************************************************************************************/
   .our-story {
-    background-color: #2b2b2b; /* Dark overlay for readability */
+    background-color: var(--preferred-black); 
     background-size: cover;
     background-position: center;
     border-radius: 10px;
@@ -190,7 +190,7 @@
   .our-story .heading {
     font-size: 3rem;
     margin: 0;
-    color: #b63232;
+    color: var(--preferred-red);
     padding-top: 10px;
     text-align: center;
     /* margin: 1rem; */
@@ -221,7 +221,7 @@
     margin-bottom: 1rem;
     font-size: 1.05rem;
     line-height: 1.7;
-    color: #f8f6f0;
+    color: var(--preferred-white);
     text-align: justify;
   }
   
@@ -259,7 +259,7 @@
   
   /* Team Member Card */
   .team .team-member {
-    background-color: #f8f6f0;
+    background-color: var(--preferred-white);
     border-radius: 10px;
     padding: 1.5rem;
     text-align: center;
@@ -284,12 +284,12 @@
   .team .team-member .name {
     font-size: 1.2rem;
     margin-bottom: 0.3rem;
-    color: #2b2b2b;
+    color: var(--preferred-black);
   }
   
   .team .team-member .role  {
     font-size: 1rem;
-    color: #2b2b2b;
+    color: var(--preferred-black);
   }
   
   /* Responsive Adjustments */
@@ -307,7 +307,7 @@
   /*****************************************************************************************************/ 
   
   .review-section {
-    background-color: #f8f6f0;
+    background-color: var(--preferred-white);
     text-align: center;
     width: 100%;
     height: 100vh;
@@ -319,9 +319,9 @@
     flex: 0 0 auto;
     padding: 2rem 1rem 1rem;
     text-align: center;
-    background: #f8f6f0;
+    background: var(--preferred-white);
     font-size: 2rem;
-    color: #b63232;
+    color: var(--preferred-red);
     margin: 0;
   }
 
@@ -363,7 +363,7 @@
     left: 0;
     width: 100%;
     padding: 1rem;
-    color: #f8f6f0;
+    color: var(--preferred-white);
     background: rgba(0, 0, 0, 0.7);
     transition: bottom 0.4s ease-in-out;
     z-index: 2;

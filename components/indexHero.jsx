@@ -22,6 +22,7 @@ export default function IndexHeroSection({ heroContent }) {
   return (
     <section className="index-hero">
       <div className="carousel">
+        <p className="title">Bala G Studios</p>
         <button className="nav-button left" onClick={handlePrev}>
           &#9664;
         </button>

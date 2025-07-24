@@ -1,11 +1,17 @@
-* {
+  :root {
+    --preferred-red: #b63232;
+    --preferred-black: #2b2b2b;
+    --preferred-white: #f8f6f0;
+  }
+
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none;  /* Internet Explorer and Edge */
-    outline: 2px solid blue;   
+    /* outline: 2px solid blue;    */
   }
   ::-webkit-scrollbar {
     display: none; /* Chrome, Safari, and Opera */
@@ -23,63 +29,12 @@
   */
   body {
     line-height: 1.6;
-    color: #b63232;
+    color: var(--preferred-red);
     width: 100%;
   }
 
   main {
     margin: 0;
     width: 100%;
-    background-color: #f8f6f0;
+    background-color: var(--preferred-white);
   }
-
-.login-container {
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-}
-
-.login-container .login-form {
-  width: 300px;
-  padding: 2rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-}
-
-.login-container .login-form .heading {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: black;
-}
-
-.login-container .login-form .input-field {
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.login-container .login-form .login-button {
-  padding: 0.75rem;
-  background-color: red;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.login-container .login-form .login-button:hover {
-  background-color: darkred;
-}
-
-.login-container .error-msg {
-  color: red;
-  margin-top: 1rem;
-  text-align: center;
-}

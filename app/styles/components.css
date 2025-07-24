@@ -8,8 +8,8 @@
   }
   
   .menu-toggle {
-    background-color: #b63232;
-    color: #f8f6f0;
+    background-color: var(--preferred-red);
+    color: var(--preferred-white);
     border: none;
     padding: 10px 15px;
     cursor: pointer;
@@ -19,13 +19,13 @@
   }
   
   .menu-toggle:hover {
-    background-color: #d94343;
+    background-color: var(--preferred-red);
   }
   
   .menu-list {
     margin-top: 10px;
     list-style: none;
-    background-color: #f8f6f0; 
+    background-color: var(--preferred-white); 
     border-radius: 8px;
     padding: 10px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -44,7 +44,7 @@
   }
 
   .menu-list .list-content {
-    color: #b63232;
+    color: var(--preferred-red);
     text-decoration: none;
   }
   
@@ -69,7 +69,7 @@
   .form-container {
     position: relative;
     justify-self: center;
-    background: #f8f6f0;
+    background: var(--preferred-white);
     padding: 30px 40px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -85,13 +85,13 @@
     right: 15px;
     font-size: 1.5rem;
     cursor: pointer;
-    color: #333;
+    color: var(--preferred-black);
   }
   
   .form-container h2 {
     margin-bottom: 20px;
     text-align: center;
-    color: #333;
+    color: var(--preferred-black);
   }
   
   /* Form Fields */
@@ -99,7 +99,7 @@
     display: block;
     margin-bottom: 5px;
     margin-top: 15px;
-    color: #555;
+    color: var(--preferred-black);
     font-size: 0.95rem;
   }
   
@@ -108,7 +108,7 @@
   .form-container input[type="email"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--preferred-white);
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 1rem;
@@ -131,9 +131,9 @@
     margin-top: 20px;
     width: 100%;
     padding: 12px;
-    background-color: #b63232;
+    background-color: var(--preferred-red);
     border: none;
-    color: white;
+    color: var(--preferred-white);
     font-weight: bold;
     border-radius: 4px;
     cursor: pointer;
@@ -142,7 +142,7 @@
   }
   
   .form-container button:hover {
-    background-color: #333;
+    background-color: var(--preferred-black);
   }
   
   /* Response Message */
@@ -155,8 +155,8 @@
 
   /* Footer.css */
   .footer {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--preferred-black);
+    color: var(--preferred-white);
     padding: 2rem 1rem;
     text-align: center;
     margin: 0;
@@ -174,7 +174,7 @@
   }
 
   .footer .footer-content .owner-link {
-    color: #ff0000;
+    color: var(--preferred-red);
     text-decoration: none;
   }
 
@@ -190,13 +190,13 @@
   }
 
   .footer .footer-links .link {
-    color: #fff;
+    color: var(--preferred-white);
     text-decoration: none;
     font-weight: 500;
   }
 
   .footer .footer-links .link:hover {
-    color: #ff0000;
+    color: var(--preferred-red);
   }
 
   /* Laptops and above */
@@ -231,116 +231,116 @@
   
   /* VideoCarousel.css */
 
-.carousel-section {
-  background: white;
-  color: black;
-  padding: 2rem;
-  text-align: center;
-}
-
-.carousel-section h2 {
-  color: red;
-  font-size: 1.8rem;
-  margin: 0;
-}
-
-.carousel-section .subtitle {
-  margin: 0.5rem 0 1.5rem;
-  color: #333;
-  font-size: 1rem;
-}
-
-.carousel-section .carousel-wrapper {
-  position: relative;
-  overflow: hidden;
-}
-
-.carousel-section .carousel-container {
-  display: flex;
-  transition: transform 0.5s ease;
-  will-change: transform;
-}
-
-.carousel-section .carousel-item {
-  flex: 0 0 33.3333%;
-  box-sizing: border-box;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.carousel-section .carousel-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 6px;
-}
-
-.carousel-section .carousel-item h3 {
-  margin: 0.5rem 0 0.25rem;
-  font-size: 1rem;
-  color: black;
-}
-
-.carousel-section .carousel-item time {
-  font-size: 0.875rem;
-  color: #666;
-}
-
-/* Navigation Buttons */
-.carousel-section .nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 0, 0, 0.8);
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  z-index: 1;
-  font-size: 1.5rem;
-  line-height: 1;
-  border-radius: 4px;
-}
-
-.carousel-section .nav.left { left: 0.5rem; }
-.carousel-section .nav.right { right: 0.5rem; }
-
-/* ---------- Responsive Styles ---------- */
-@media (max-width: 768px) {
-  .carousel-section .carousel-item {
-    flex: 0 0 66.6666%; /* show 1 full + partial */
+  .carousel-section {
+    background: var(--preferred-white);
+    color: black;
+    padding: 2rem;
+    text-align: center;
   }
 
-  .carousel-section .carousel-item h3 {
-    font-size: 0.95rem;
+  .carousel-section h2 {
+    color: var(--preferred-red);
+    font-size: 1.8rem;
+    margin: 0;
   }
 
   .carousel-section .subtitle {
-    font-size: 0.9rem;
+    margin: 0.5rem 0 1.5rem;
+    color: var(--preferred-black);
+    font-size: 1rem;
   }
 
-  .carousel-section .nav {
-    padding: 0.4rem 0.8rem;
-    font-size: 1.25rem;
+  .carousel-section .carousel-wrapper {
+    position: relative;
+    overflow: hidden;
   }
-}
 
-@media (max-width: 480px) {
+  .carousel-section .carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+  }
+
   .carousel-section .carousel-item {
-    flex: 0 0 80%; /* show 1 full + 1 smaller partial */
+    flex: 0 0 33.3333%;
+    box-sizing: border-box;
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel-section .carousel-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
   }
 
   .carousel-section .carousel-item h3 {
-    font-size: 0.9rem;
+    margin: 0.5rem 0 0.25rem;
+    font-size: 1rem;
+    color: var(--preferred-black);
   }
 
   .carousel-section .carousel-item time {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--preferred-black);
   }
 
-  .carousel-section .subtitle {
-    font-size: 0.85rem;
+  /* Navigation Buttons */
+  .carousel-section .nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 0, 0, 0.8);
+    color: var(--preferred-white);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 1.5rem;
+    line-height: 1;
+    border-radius: 4px;
   }
-}
+
+  .carousel-section .nav.left { left: 0.5rem; }
+  .carousel-section .nav.right { right: 0.5rem; }
+
+  /* ---------- Responsive Styles ---------- */
+  @media (max-width: 768px) {
+    .carousel-section .carousel-item {
+      flex: 0 0 66.6666%; /* show 1 full + partial */
+    }
+
+    .carousel-section .carousel-item h3 {
+      font-size: 0.95rem;
+    }
+
+    .carousel-section .subtitle {
+      font-size: 0.9rem;
+    }
+
+    .carousel-section .nav {
+      padding: 0.4rem 0.8rem;
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .carousel-section .carousel-item {
+      flex: 0 0 80%; /* show 1 full + 1 smaller partial */
+    }
+
+    .carousel-section .carousel-item h3 {
+      font-size: 0.9rem;
+    }
+
+    .carousel-section .carousel-item time {
+      font-size: 0.75rem;
+    }
+
+    .carousel-section .subtitle {
+      font-size: 0.85rem;
+    }
+  }
