@@ -16,33 +16,22 @@ import '@/app/styles/global.css';
 import '@/app/styles/index.css';
 
 export default async function IndexPage(){
-
-  return (
-    <html lang="en">  
-      <body>
-        {Content()}
-      </body>
-    </html>
-  );
-  
-  async function Content() {
-    const payload = await getPayload({ config });
-    const content = await payload.findGlobal({ slug: 'index' });
-    if (!content) {
-      return <NotFound />;
-    }
-    return (
-      <main>
-        <IndexOverlay overlayContent={content.overlay}/>
-        <IndexHeroSection heroContent={content.hero} />
-        <SideMenu />
-        <IndexTrailerSection trailerContent={content.trailers}/>
-        <IndexMapSection mapContent={content.map}/>
-        <IndexWorkSummarySection workSummaryContent={content.workSummary}/>
-        <IndexStatsSection statsContent={content.presentStatistic}/>
-        <Footer />
-      </main>
-  );
+  const payload = await getPayload({ config });
+  const content = await payload.findGlobal({ slug: 'index' });
+  if (!content) {
+    return <NotFound />;
   }
+  return (
+    <main>
+      <SideMenu />
+      <IndexOverlay overlayContent={content.overlay}/>
+      <IndexHeroSection heroContent={content.hero} />
+      <IndexTrailerSection trailerContent={content.trailers}/>
+      <IndexMapSection mapContent={content.map}/>
+      <IndexWorkSummarySection workSummaryContent={content.workSummary}/>
+      <IndexStatsSection statsContent={content.presentStatistic}/>
+      <Footer />
+    </main>
+  );
 }
 

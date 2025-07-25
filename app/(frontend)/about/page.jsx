@@ -14,30 +14,21 @@ import { NotFound } from "payload";
 import "@/app/styles/global.css"; 
 import "@/app/styles/about.css"; 
 
-export default function About() {
-  return (
-    <html lang="en">  
-      <body>
-        {Content()}
-      </body>
-    </html>
-  );
-  async function Content(){
-    const payload = await getPayload({ config });
-    const content = await payload.findGlobal({ slug: 'about' });
-    if (!content) {
-      return <NotFound />;
-    }
-    return (
-      <main>
-        <AboutHeroSection heroContent={content.hero} />
-        <SideMenu />
-        <AboutFounderSection founderContent={content.founder} />
-        <AboutOurStorySection storyContent={content.story} />
-        <AboutTeamSection teamContent={content.team} />
-        <AboutReviewsSection reviewContent={content.reviews} />
-        <Footer />
-      </main>
-    );
+export default async function About() {
+  const payload = await getPayload({ config });
+  const content = await payload.findGlobal({ slug: 'about' });
+  if (!content) {
+    return <NotFound />;
   }
+  return (
+    <main>
+      <AboutHeroSection heroContent={content.hero} />
+      <SideMenu />
+      <AboutFounderSection founderContent={content.founder} />
+      <AboutOurStorySection storyContent={content.story} />
+      <AboutTeamSection teamContent={content.team} />
+      <AboutReviewsSection reviewContent={content.reviews} />
+      <Footer />
+    </main>
+  );
 }
