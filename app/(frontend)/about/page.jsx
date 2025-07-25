@@ -17,13 +17,12 @@ import "@/app/styles/about.css";
 export default async function About() {
   const payload = await getPayload({ config });
   const content = await payload.findGlobal({ slug: 'about' });
-  if (!content) {
-    return <NotFound />;
-  }
+  if (!content) return <NotFound />;
+
   return (
     <main>
-      <AboutHeroSection heroContent={content.hero} />
       <SideMenu />
+      <AboutHeroSection heroContent={content.hero} />
       <AboutFounderSection founderContent={content.founder} />
       <AboutOurStorySection storyContent={content.story} />
       <AboutTeamSection teamContent={content.team} />

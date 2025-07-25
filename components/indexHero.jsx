@@ -38,8 +38,8 @@ export default function IndexHeroSection({ heroContent }) {
     return videos.map((item, index) => (
       <video
         key={index}
-        src={item.video.url}
-        alt={item.video.alt}
+        src={item?.video?.url}
+        alt={item?.video?.alt}
         className={`carousel-video ${index === current ? 'active' : ''}`}
         autoPlay
         muted

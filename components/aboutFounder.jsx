@@ -3,9 +3,9 @@ import React from "react";
 export default function AboutFounderSection({founderContent}) {
     return (
         <section className="founder-section">
-            <h2 className="heading">{founderContent.heading}</h2>
+            <h2 className="heading">{founderContent?.heading}</h2>
             <div className="founders">
-            {generateFounderCards(founderContent.founders)}
+            {generateFounderCards(founderContent?.founders)}
             </div>
         </section>
     );
@@ -16,10 +16,10 @@ export default function AboutFounderSection({founderContent}) {
                 <img 
                     className="image"
                     loading="lazy"
-                    src={founder.image.url}
-                    alt={founder.image.alt} />
-                <h4 className="name">{founder.name}</h4>
-                <p className="designation">{founder.designation}</p>
+                    src={founder?.image?.url}
+                    alt={founder?.image?.alt} />
+                <h4 className="name">{founder?.name}</h4>
+                <p className="designation">{founder?.designation}</p>
             </div>
         ));
     }

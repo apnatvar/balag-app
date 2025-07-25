@@ -5,7 +5,7 @@ export default function IndexStatsSection({ statsContent }) {
         <section className="stats-section">
         {/* Background Video */}
         <video autoPlay muted loop playsInline className="bg-video">
-            <source src={statsContent?.video.url} alt={statsContent?.video.alt} />
+            <source src={statsContent?.video?.url} alt={statsContent?.video?.alt} />
             Your browser does not support HTML5 video.
         </video>
         {/* Dimming Overlay */}
@@ -21,7 +21,7 @@ export default function IndexStatsSection({ statsContent }) {
 
             {/* Right Side: Stats */}
             <div className="right-text">
-                {generateStatsBlocks(statsContent.statistics)}
+                {generateStatsBlocks(statsContent?.statistics)}
             </div>
         </div>
     </section>
@@ -31,8 +31,8 @@ export default function IndexStatsSection({ statsContent }) {
         if (!Array.isArray(stats) || stats.length === 0) return null
         return stats.map((item, index) => (
             <div className="stat-block" key={index}>
-                <div className="stat-number">{item.value}</div>
-                <div className="stat-label">{item.label}</div>
+                <div className="stat-number">{item?.value}</div>
+                <div className="stat-label">{item?.label}</div>
             </div>
         ))        
     }

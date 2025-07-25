@@ -32,7 +32,7 @@ export default function IndexTrailerSection({ trailerContent }) {
 
   return (
     <section className="trailer-section">
-      <h2 className="heading">{trailerContent.title}</h2>
+      <h2 className="heading">{trailerContent?.title}</h2>
 
       <div className="filter-buttons">
         {generateCategoryButtons()}
@@ -69,9 +69,9 @@ export default function IndexTrailerSection({ trailerContent }) {
     return cards
         .filter(card => activeCategory === 'all' || card.categories.category === activeCategory)
         .map(card => (
-        <div key={card.id} className="carousel-item">
+        <div key={card?.id} className="carousel-item">
           <a href={card?.link} target='_blank'>
-            <img src={card?.image.url} alt={card?.image.alt} />
+            <img src={card?.image?.url} alt={card?.image?.alt} />
             <p className='card-title'>{card?.trailerTitle}</p>
           </a>
         </div>

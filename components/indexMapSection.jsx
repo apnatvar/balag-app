@@ -30,10 +30,10 @@ export default function IndexMapSection({ mapContent }) {
         if (!Array.isArray(cards) || cards.length === 0) return null
         return cards.map((card, index) => (
             <div className="international-image-box" key={index}>
-                <img src={card.image.url} alt={card.image.alt} loading='lazy' className='int-image'/>
-                <div className="overlay-on-hover" key={cards.index}>
-                    <h3 className="heading">{card.heading}</h3>
-                    <p className="paragraph">{card.paragraph}</p>
+                <img src={card?.image?.url} alt={card?.image?.alt} loading='lazy' className='int-image'/>
+                <div className="overlay-on-hover">
+                    <h3 className="heading">{card?.heading}</h3>
+                    <p className="paragraph">{card?.paragraph}</p>
                 </div>
             </div>
         ))

@@ -30,7 +30,7 @@ export default async function Footer() {
   function renderLinks(links) {
     if (!Array.isArray(links) || links.length === 0) return null
     return links.map((item, index) => (
-      <li key={index}><Link href={item.link} className='link' target='_blank'>{item.placeholder}</Link></li>
+      <li key={index}><Link href={item?.link} className='link' target='_blank'>{item?.placeholder}</Link></li>
     ))
   }
 };
