@@ -6,11 +6,11 @@ import IndexWorkSummarySection from '@/components/indexWorkSummary';
 import IndexStatsSection from '@/components/indexStats';
 import IndexMapSection from '@/components/indexMapSection';
 import IndexTrailerSection from '@/components/indexTrailerSection';
+import ErrorPage from '@/components/errorPage';
 import Footer from '@/components/footer';
 
 import { getPayload } from "payload";
 import config from "@/payload.config";
-import { NotFound } from "payload";
 
 import '@/app/styles/global.css';
 import '@/app/styles/index.css';
@@ -18,9 +18,8 @@ import '@/app/styles/index.css';
 export default async function IndexPage(){
   const payload = await getPayload({ config });
   const content = await payload.findGlobal({ slug: 'index' });
-  if (!content) {
-    return <NotFound />;
-  }
+  if (!content.overlay.title) return <ErrorPage />;
+
   return (
     <main>
       <SideMenu />

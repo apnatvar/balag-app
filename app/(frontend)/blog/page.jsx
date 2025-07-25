@@ -2,22 +2,19 @@ import React from "react";
 import Link from 'next/link';
 
 import SideMenu from "@/components/sideMenu";
+import ErrorPage from '@/components/errorPage';
 
 import '@/app/styles/blog.css'; 
 import '@/app/styles/global.css';
 
 import { getPayload } from 'payload';
 import config from '@/payload.config';
-import { NotFound } from "payload";
 
 export default async function BlogPage() {
   const payload = await getPayload({ config });
   const blogs = await payload.find({ collection: 'blogs', limit: 0, });
   const content = await payload.findGlobal({ slug: 'blog-page' });
-  console.log("blogs", blogs.docs);
-  console.log("content", content);
-
-  if (!blogs || !content) return <NotFound />;
+  if (!blogs || !content) return <ErrorPage />;
 
   return (
     <main>

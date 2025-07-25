@@ -6,10 +6,10 @@ import AboutFounderSection from '@/components/aboutFounder';
 import AboutOurStorySection from '@/components/aboutOurStory';
 import AboutTeamSection from '@/components/aboutTeamMembers';
 import AboutReviewsSection from '@/components/aboutReviews';
+import ErrorPage from '@/components/errorPage';
 
 import { getPayload } from "payload";
 import config from "@/payload.config";
-import { NotFound } from "payload";
 
 import "@/app/styles/global.css"; 
 import "@/app/styles/about.css"; 
@@ -17,7 +17,7 @@ import "@/app/styles/about.css";
 export default async function About() {
   const payload = await getPayload({ config });
   const content = await payload.findGlobal({ slug: 'about' });
-  if (!content) return <NotFound />;
+  if (!content.hero.title) return <ErrorPage />;
 
   return (
     <main>

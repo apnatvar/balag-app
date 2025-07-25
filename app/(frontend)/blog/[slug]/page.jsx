@@ -1,8 +1,9 @@
 import React from "react";
 import SideMenu from "@/components/sideMenu";
 import { headers } from 'next/headers';
+import ErrorPage from '@/components/errorPage';
 
-import { getPayload, NotFound } from 'payload';
+import { getPayload } from 'payload';
 import config from '@/payload.config';
 
 import '@/app/styles/blog.css'; 
@@ -13,7 +14,7 @@ export default async function BlogPost() {
   const payload = await getPayload({ config });
   const { docs } = await payload.find({ collection: 'blogs', slug: slug, });
   const post = docs[0];
-  if (!post) return <NotFound />;
+  if (!post) return <ErrorPage />;
 
   return (
     <main>
