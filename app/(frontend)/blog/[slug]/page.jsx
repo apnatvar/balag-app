@@ -8,17 +8,25 @@ import { NotFound } from 'payload';
 
 import '@/app/styles/blog.css'; 
 
-export default async function BlogPost({ params }) {
-  const requestHeaders = await headers();
-  const slug = requestHeaders.get('slug');
-  const payload = await getPayload({ config });
-  const { docs } = await payload.find({ collection: 'blogs', slug: slug, });
-  const post = docs[0];
-  if (!post) return <NotFound />;
-
+export default async function BlogPost() {
   return (
-    <html lang="en">
+    <html lang="en">  
       <body>
+        {Content()}
+      </body>
+    </html>
+  );
+
+  async function Content(){
+    const requestHeaders = await headers();
+    const slug = requestHeaders.get('slug');
+    const payload = await getPayload({ config });
+    const { docs } = await payload.find({ collection: 'blogs', slug: slug, });
+    const post = docs[0];
+    if (!post) return <NotFound />;
+
+    return (
+      <main>
         <SideMenu />
         <article className="blog-container">
           <section className="blog-image">
@@ -55,7 +63,7 @@ export default async function BlogPost({ params }) {
             <img src={post.image2?.url} alt={post.image2?.alt}/>
           </section>
         </article>
-      </body>
-    </html>
-  );
+      </main>
+    );
+  }
 }

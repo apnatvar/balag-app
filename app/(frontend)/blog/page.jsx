@@ -8,19 +8,27 @@ import config from '@/payload.config';
 import { NotFound } from "payload";
 
 export default async function BlogPage() {
-  const payload = await getPayload({ config });
-  const { allBlogs } = await payload.find({ collection: 'blogs', slug: 'blog-slug' });
-  const content= await payload.findGlobal({ slug: "blog-page" });
-  console.log("content", content);
-  const blogs = allBlogs[0];
-
-  if (!content || !blogs) {
-    return <NotFound />;
-  }
-
   return (
-    <html lang="en">
+    <html lang="en">  
       <body>
+        {Content()}
+      </body>
+    </html>
+  );
+
+  async function Content(){
+    const payload = await getPayload({ config });
+    const { allBlogs } = await payload.find({ collection: 'blogs', slug: 'blog-slug' });
+    const content= await payload.findGlobal({ slug: "blog-page" });
+    console.log("content", content);
+    const blogs = allBlogs[0];
+
+    if (!content || !blogs) {
+      return <NotFound />;
+    }
+
+    return (
+      <main>
         <SideMenu />
         <section className="blog-hero">
           <h1 className="heading">{content.heading}</h1>
@@ -29,9 +37,9 @@ export default async function BlogPage() {
             {generateBlogCards(blogs)}
           </div>
         </section>
-      </body>
-    </html>
-  );
+      </main>
+    );
+  }
 
   function generateBlogCards(blogs) {
     if (!blogs) return <p>Loading...</p>;
