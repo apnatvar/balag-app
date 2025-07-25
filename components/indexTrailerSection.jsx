@@ -70,8 +70,9 @@ export default function IndexTrailerSection({ trailerContent }) {
         .filter(card => activeCategory === 'all' || card.categories.category === activeCategory)
         .map(card => (
         <div key={card.id} className="carousel-item">
-          <a href={`https://${card?.link}`} target='_blank'>
+          <a href={card?.link} target='_blank'>
             <img src={card?.image.url} alt={card?.image.alt} />
+            <p className='card-title'>{card?.trailerTitle}</p>
           </a>
         </div>
     ))

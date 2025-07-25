@@ -30,9 +30,10 @@ export const LandingPage: GlobalConfig = {
       name: 'trailers',
       type: 'group',
       fields: [
-        { name: 'title', type: 'text' },
+        { name: 'title', type: 'text', },
         { name: 'trailer', type: 'array',
           fields: [
+            { name: 'trailerTitle', type: 'text', },
             { name: 'image', type: 'upload', relationTo: 'media' },
             { name: 'link', type: 'text'},
             { name: 'categories', type: 'group',

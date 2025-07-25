@@ -406,14 +406,14 @@
     background: var(--preferred-white);
   }
   
-  .section-heading {
+  .trailer-section .section-heading {
     font-size: 32px;
     margin-bottom: 30px;
     text-align: center;
   }
   
   /* Filter Buttons */
-  .filter-buttons {
+  .trailer-section .filter-buttons {
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -422,10 +422,10 @@
     font-family: 'Work Sans'; 
   }
   
-  .filter-btn {
+  .trailer-section .filter-btn {
     padding: 10px 20px;
     border: none;
-    background-color: #b63232;
+    background-color: var(--preferred-red);
     color: rgb(17, 17, 17);
     border-radius: 20px;
     cursor: pointer;
@@ -433,21 +433,21 @@
     transition: background-color 1s;
   }
   
-  .filter-btn.active,
-  .filter-btn:hover {
-    background-color: #d94343;
-    color: #2b2b2b;
+  .trailer-section .filter-btn.active,
+  .trailer-section .filter-btn:hover {
+    background-color: var(--preferred-red);
+    color: var(--preferred-black);
   }
   
   /* Carousel Layout */
-  .carousel-container {
+  .trailer-section .carousel-container {
     position: relative;
     overflow: hidden;
     max-width: 100%;
     margin: 0 auto;
   }
   
-  .carousel-track {
+  .trailer-section .carousel-track {
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
@@ -455,11 +455,11 @@
     padding-bottom: 20px;
   }
   
-  .carousel-track::-webkit-scrollbar {
+  .trailer-section .carousel-track::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
   }
 
-  .carousel-item {
+  .trailer-section .carousel-item {
     width: 200px;
     height: 270px; /* portrait aspect ratio */
     flex: 0 0 auto;
@@ -468,19 +468,34 @@
     position: relative;
   }
   
-  .carousel-item img {
+  .trailer-section .carousel-item img {
     position: relative;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }  
   
+  .trailer-section .card-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 8px 12px;
+    background-color: rgba(0, 0, 0, 0.7); /* black overlay */
+    color: var(--preferred-red);
+    font-weight: bold;
+    font-size: 0.75rem;
+    max-width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   /* See More Button */
-  .carousel-next {
+  .trailer-section .carousel-next {
     padding: 10px 20px;
     border: none;
-    background-color: #d94343;
-    color: #2b2b2b;
+    background-color: var(--preferred-red);
+    color: var(--preferred-black);
     border-radius: 20px;
     cursor: pointer;
     font-size: 14px;
@@ -488,12 +503,12 @@
     font-family: 'Work Sans'; 
   }
   
-  .carousel-next:hover {
-    background-color: #b63232;
-    color: #2b2b2b;
+  .trailer-section .carousel-next:hover {
+    background-color: var(--preferred-red);
+    color: var(--preferred-black);
   }
   
-  .carousel-controls {
+  .trailer-section .carousel-controls {
     margin-top: 20px;
     display: flex;
     justify-content: center;
