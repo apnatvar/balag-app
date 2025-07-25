@@ -20,7 +20,7 @@ export default async function BlogPost() {
       <SideMenu />
       <article className="blog-container">
         <section className="blog-image">
-          <video controls>
+          <video autoPlay muted loop>
             <source src={post.video1?.url} type="video/mp4"/>
             Your browser does not support the video tag.
           </video>
@@ -41,7 +41,7 @@ export default async function BlogPost() {
         </section>
 
         <section className="blog-image">
-          <img src={post.image2?.url} alt={post.image2?.alt}/>
+          <img src={post.image3?.url} alt={post.image3?.alt}/>
         </section>
 
         <section className="blog-content">
@@ -50,7 +50,7 @@ export default async function BlogPost() {
         </section>
 
         <section className="blog-image">
-          <img src={post.image2?.url} alt={post.image2?.alt}/>
+          <img src={post.image4?.url} alt={post.image4?.alt}/>
         </section>
       </article>
     </main>

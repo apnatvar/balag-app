@@ -3,47 +3,52 @@ import Link from 'next/link';
 
 import SideMenu from "@/components/sideMenu";
 
+import '@/app/styles/blog.css'; 
+import '@/app/styles/global.css';
+
 import { getPayload } from 'payload';
 import config from '@/payload.config';
 import { NotFound } from "payload";
 
 export default async function BlogPage() {
   const payload = await getPayload({ config });
-  const { allBlogs } = await payload.find({ collection: 'blogs', slug: 'blog-slug' });
-  const content= await payload.findGlobal({ slug: "blog-page" });
+  const blogs = await payload.find({ collection: 'blogs', limit: 0, });
+  const content = await payload.findGlobal({ slug: 'blog-page' });
+  console.log("blogs", blogs.docs);
   console.log("content", content);
-  const blogs = allBlogs[0];
 
-  if (!content || !blogs) {
-    return <NotFound />;
-  }
+  if (!blogs || !content) return <NotFound />;
 
   return (
     <main>
       <SideMenu />
       <section className="blog-hero">
-        <h1 className="heading">{content.heading}</h1>
-        <p className="subheading">{content.subheading}</p>
+        <h1 className="heading">{content?.heading}</h1>
+        <p className="subheading">{content?.subheading}</p>
         <div className="blog-cards">
-          {generateBlogCards(blogs)}
+          {generateBlogCards(blogs.docs)}
         </div>
       </section>
     </main>
   );
 
   function generateBlogCards(blogs) {
-    if (!blogs) return <p>Loading...</p>;
-    return Object.entries(blogs).map(([slug, blog]) => (
-      <div className="card" key={slug}>
-        <h2 className="title">{blog.heading}</h2>
-        <img
-          className="image"
-          loading="lazy"
-          src={blog.image1.url}
-          alt={blog.image1.alt}
-        />
-        <p className="date">{blog.publishedDate}</p>
-        <Link className="description" href={`/blog/${slug}`}>Read More</Link>
+    return blogs.map((item, index) => (
+      <div className="card" key={index}>
+        <Link className="description" href={`/blog/${item?.slug}`}>
+          <div className="image-container">
+            <img
+            className="image"
+            src={item?.image1.url}
+            alt={item?.image1.alt}
+            />
+          </div>
+          <div className="text-container">
+            <h1 className="title">{item?.heading}</h1>
+            <p className="date">Published: {item?.publishedDate.split('T')[0]}</p>
+            <p className="brief">{item?.brief}</p>
+          </div>
+        </Link>
       </div>
     ));
   }
